@@ -10,7 +10,7 @@ const katex = require("rehype-katex");
 const config = {
   title: "Int3face Docs",
   tagline: "Int3face",
-  url: "http://docs.int3face.io",
+  url: "https://int3facechain.github.io/docs/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Int3facechain", // Usually your GitHub org/user name.
-  projectName: "int3face-docs", // Usually your repo name.
+  projectName: "docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
   // Even if you don't use internalization, you can use this field to set useful
