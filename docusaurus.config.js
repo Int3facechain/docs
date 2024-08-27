@@ -43,7 +43,7 @@ const config = {
           lastVersion: "current",
           versions: {
             current: {
-              label: "4.0",
+              label: "1.0",
               path: "/",
             },
           },
@@ -73,9 +73,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Neutron",
+        title: "Int3face",
         logo: {
-          alt: "Neutron Logo",
+          alt: "Int3face Logo",
           src: "img/logo.jpeg",
         },
         items: [
@@ -86,7 +86,7 @@ const config = {
             label: "Introduction",
           },
           {
-            href: "https://github.com/neutron-org",
+            href: "https://github.com/Int3facechain",
             label: "GitHub",
             position: "right",
           },
@@ -113,16 +113,12 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/neutron",
-              },
-              {
                 label: "Discord",
-                href: "https://discord.neutron.org/",
+                href: "https://discord.com/invite/2xs9YvtpjF",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/Neutron_org",
+                href: "https://twitter.com/_Bitfrost",
               },
             ],
           },
@@ -131,12 +127,12 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/neutron-org/neutron",
+                href: "https://github.com/Int3facechain",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Neutron Org. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Int3face. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
