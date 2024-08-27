@@ -16,7 +16,7 @@ The outbound transfer consists of the following steps:
 6. The observer adds it to the internal quest.
 7. The observer uses the corresponding external chain client to build, sign, and broadcast the transaction.
  
-![outbound_current](../../static/img/ADR/adr001/outbound_queue.png)
+![outbound_current](/img/ADR/adr001/outbound_queue.png)
 
 The flow is quite straightforward. However, dynamic committee handling involves many corner cases that we need to be aware of:
 1. **Observer reboots**: Which block should the observer use if it reboots and misses some blocks?
@@ -31,7 +31,7 @@ The optimistic approach allows the observer to start monitoring the Int3face cha
 
 But what happens if the majority is down? In that case, the **grace period** is applied. The grace period is a specific time during which the user can submit `MsgOutboundTransferRetry`, which serves as a retry mechanism for `MsgOutboundTransfer`. For example, if the transfer is submitted at 10:20 and the execution time parameter is 2 hours, the grace period starts at 12:20 and lasts for a relatively long period, such as around 7 days.
 
-![outbound_current](../../static/img/ADR/adr001/grace_period.png)
+![outbound_current](/img/ADR/adr001/grace_period.png)
 
 During this time, the user can submit `MsgOutboundTransferRetry` containing the Int3face hash of the `MsgOutboundTransfer` transaction.
 ```protobuf
@@ -45,11 +45,11 @@ Considering that, once the observer receives the `MsgOutboundTransferRetry` comm
 
 Thus, the retry process looks like the following:
 
-![outbound_current](../../static/img/ADR/adr001/outbound_queue_retry.png)
+![outbound_current](/img/ADR/adr001/outbound_queue_retry.png)
 
 And the observer start up is as follows:
 
-![observer_reboot](../../static/img/ADR/adr001/observer_reboot.png)
+![observer_reboot](/img/ADR/adr001/observer_reboot.png)
 
 ## Alternative approaches
 

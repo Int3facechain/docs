@@ -1,6 +1,6 @@
 # tBTC Main Components Diagram
 
-![1](../../static/img/comparisons/tbtc_components.png)
+![1](/img/comparisons/tbtc_components.png)
 
 To start the tBTC node validator needs:
 1. tBTC node
@@ -13,7 +13,7 @@ To start the tBTC node validator needs:
 
 # iBTC Main Components Diagram
 
-![2](../../static/img/comparisons/ibtc_components.png)
+![2](/img/comparisons/ibtc_components.png)
 
 To start the iBTC node validator needs:
 1. iBTC node
@@ -40,7 +40,7 @@ Estimated recommended hardware to run a single iBTC node:
 
 In total - ~8 minutes (41 ETH blocks)
 
-![1](../../static/img/comparisons/tbtc_signature_timeline.png)
+![1](/img/comparisons/tbtc_signature_timeline.png)
 
 In case of signature failure - next attempt will be performed after 41 block window. Maximum is 5 signing attempts.
 Worst case scenario - signature will take 205 blocks or ~40 minutes on ETH
@@ -55,18 +55,18 @@ In case of signature failure - next attempt will be performed ASAP. We have a to
 
 ## Inbound transfer
 
-![2](../../static/img/comparisons/tbtc_inbound_timeline.png)
+![2](/img/comparisons/tbtc_inbound_timeline.png)
 
 ## Outbound transfer
 
-![3](../../static/img/comparisons/tbtc_outbound_timeline.png)
+![3](/img/comparisons/tbtc_outbound_timeline.png)
 
 # iBTC complete timeline
 
 ## Inbound transfer
 
-![4](../../static/img/comparisons/ibtc_inbound_timeline.png)
+![4](/img/comparisons/ibtc_inbound_timeline.png)
 
 ## Outbound transfer
 
-![5](../../static/img/comparisons/ibtc_outbound_timeline.png)
+![5](/img/comparisons/ibtc_outbound_timeline.png)

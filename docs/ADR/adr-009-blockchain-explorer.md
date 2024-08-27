@@ -78,7 +78,7 @@ Top most used block explorers offered by the Cosmos ecosystem: https://cosmos.ne
     - Architecture:
       - Consists only from a light client (frontend app) which fetches data from a full-nodes without any caching.
       - Scheme:
-        + ![image](../images/ping_pub_architecture.png)
+        + ![image](/img/common/ping_pub_architecture.png)
 
 3. **Big Dipper**:
     - Official website: [Big Dipper](https://bigdipper.io/).

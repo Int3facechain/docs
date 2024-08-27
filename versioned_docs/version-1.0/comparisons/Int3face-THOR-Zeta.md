@@ -45,11 +45,11 @@
 
 ### CCMP success
 
-![success](../../static/img/comparisons/zetachain_success-Successful_Contract_Call.png)
+![success](/img/comparisons/zetachain_success-Successful_Contract_Call.png)
 
 ### CCMP failure
 
-![failure](../../static/img/comparisons/zetachain_failure-Failed_Contract_Call.png)
+![failure](/img/comparisons/zetachain_failure-Failed_Contract_Call.png)
 
 ## Comparison Table
 

@@ -124,7 +124,7 @@ There are two methods for managing quarantined assets:
   still requires the state queue, but operations are based solely on straightforward transfers. It also offers a
   transparent view of the **quarantine**, represented by a dedicated **quarantine** vault on Int3face.
 
-![quarantine](../../static/img/ADR/adr013/quarantine.png)
+![quarantine](/img/ADR/adr013/quarantine.png)
 
 For **quarantining**, a queue is utilized instead of a map to allow sequential execution of transfers and to potentially
 filter out malicious transactions. To better understand the difference, consider the following example.

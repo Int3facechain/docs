@@ -14,15 +14,15 @@ which requires users to actively manage their staked tokens on their own.
 
 **Staking**
 
-![img.png](../images/staking.png)
+![img.png](/img/common/staking.png)
 
 **Liquid Staking**
 
-![img.png](../images/liquid_staking.png)
+![img.png](/img/common/liquid_staking.png)
 
 **Superfluid Staking**
 
-![img.png](../images/superfluid_staking.png)
+![img.png](/img/common/superfluid_staking.png)
 
 ## How-to Process:
 1. Choose the pool you want to deposit your assets.

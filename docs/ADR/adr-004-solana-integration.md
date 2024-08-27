@@ -33,7 +33,7 @@ The flow should be pretty straightforward:
 3. The Solana smart contract waits for the confirmation count threshold
 4. The Solana smart contract releases the tokens to the recipient's address
 
-![flow](../../static/img/ADR/adr004/adr004_inbound_outbound_flow.png)
+![flow](/img/ADR/adr004/adr004_inbound_outbound_flow.png)
 
 ### Solana smart-contract/Vault 
 

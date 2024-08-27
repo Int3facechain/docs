@@ -49,7 +49,7 @@ Use [this template](https://grafana.com/grafana/dashboards/16846-aptos-validator
 6. Prometheus (Hetzner): [prometheus-ui](http://95.217.153.1:9099/graph)
 
 Architecture:
-![monitoring_architecture](../images/monitoring_architecture.png)
+![monitoring_architecture](/img/common/monitoring_architecture.png)
 
 ## Metrics overview
 

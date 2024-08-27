@@ -18,7 +18,7 @@ We will use our own BTC validator funds.
 1. We need an int3 address to send funds to
 
 We can generate new address by `int3faced keys add "$your_key_name"`.
-![new_key](../../../static/img/demos/doge/new_key.png)
+![new_key](/img/demos/doge/new_key.png)
 
 We will use the address `int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt`
 
@@ -28,7 +28,7 @@ We will use the address `int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt`
 int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
 ```
 
-![init_balance](../../../static/img/demos/btc/init_balance.png)
+![init_balance](/img/demos/btc/init_balance.png)
 
 3. Select an UTXO to spend
 
@@ -36,7 +36,7 @@ int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
 bitcoin-cli listunspent
 ```
 
-![list_unspent](../../../static/img/demos/btc/list_unspent.png)
+![list_unspent](/img/demos/btc/list_unspent.png)
 
 If you don't see any UTXO available, mine a block to receive the rewards `bitcoin-cli -generate 1`, and run `listunspent` command again.
 
@@ -69,7 +69,7 @@ vouts='{
 bitcoin-cli createrawtransaction "$vins" "$vouts"
 ```
 
-![raw_transaction](../../../static/img/demos/btc/raw_transaction.png)
+![raw_transaction](/img/demos/btc/raw_transaction.png)
 
 5. We can verify that the transaction is correct
 
@@ -77,7 +77,7 @@ bitcoin-cli createrawtransaction "$vins" "$vouts"
 bitcoin-tx -regtest -json "$raw_tx"
 ```
 
-![decoded_raw_transaction](../../../static/img/demos/btc/decoded_raw_transaction.png)
+![decoded_raw_transaction](/img/demos/btc/decoded_raw_transaction.png)
 
 6. Sign the transaction
 
@@ -85,7 +85,7 @@ bitcoin-tx -regtest -json "$raw_tx"
 bitcoin-cli signrawtransactionwithwallet $raw_tx
 ```
 
-![signed_tx](../../../static/img/demos/btc/signed_tx.png)
+![signed_tx](/img/demos/btc/signed_tx.png)
 
 7. Broadcast signed transaction to the BTC
 
@@ -93,7 +93,7 @@ bitcoin-cli signrawtransactionwithwallet $raw_tx
 bitcoin-cli sendrawtransaction $signed_tx
 ```
 
-![send_btc_transaction](../../../static/img/demos/btc/send_btc_transaction.png)
+![send_btc_transaction](/img/demos/btc/send_btc_transaction.png)
 
 8. Generate a block to include our transaction in the chain
 
@@ -109,7 +109,7 @@ Now the transaction should be observed by the Observer and sent to the Int3face 
 int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
 ```
 
-![inbound_balance](../../../static/img/demos/btc/inbound_balance.png)
+![inbound_balance](/img/demos/btc/inbound_balance.png)
 Now, we can see BTC tokens in our wallet.
 
 ## Outbound Transfer
@@ -129,7 +129,7 @@ bcrt1qu80e2kt8ery9589gec9em8qhzkvxqkdy8ecr6x
 int3faced tx bridge outbound-transfer bcrt1qu80e2kt8ery9589gec9em8qhzkvxqkdy8ecr6x bitcoin-btc 100000000 --from doge_test
 ```
 
-![outbound_transaction](../../../static/img/demos/btc/outbound_transaction.png)
+![outbound_transaction](/img/demos/btc/outbound_transaction.png)
 
 3. We can check our balance again to see that DOGE tokens in Int3face were burt
 
@@ -149,5 +149,5 @@ bitcoin-cli -generate 1
 bitcoin-cli listunspent 1 9999999 '["bcrt1qu80e2kt8ery9589gec9em8qhzkvxqkdy8ecr6x"]'
 ```
 
-![outbound_btc_balance](../../../static/img/demos/btc/outbound_btc_balance.png)
+![outbound_btc_balance](/img/demos/btc/outbound_btc_balance.png)
 Now, we can see BTC tokens in our wallet.

@@ -25,6 +25,6 @@ Resources:
 
 ## Architecture Diagram
 
-![node_upgrades_architecture](../images/node_upgrades_architecture.png)
+![node_upgrades_architecture](/img/common/node_upgrades_architecture.png)
 
 

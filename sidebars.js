@@ -45,24 +45,28 @@ const sidebars = {
               label: "Bridge",
               type: "category",
               items: [
+                "int3face/modules/bridge/overview",
               ],
             },
             {
               label: "IBC Rate Limit",
               type: "category",
               items: [
+                "int3face/modules/ibcratelimit/overview",
               ],
             },
             {
               label: "Cross-chain Rate Limit",
               type: "category",
               items: [
+                "int3face/modules/ratelimit/overview",
               ],
             },
             {
               label: "Quarantine",
               type: "category",
               items: [
+                "int3face/modules/quarantine/overview",
               ],
             },
             {

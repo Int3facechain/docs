@@ -105,11 +105,11 @@ The approach is the same as for the usual BTC bridging.
 
 ### Inbound transfer
 
-![inbound](../../static/img/ADR/adr005/inbound_transfer.png)
+![inbound](/img/ADR/adr005/inbound_transfer.png)
 
 ### Outbound transfer
 
-![outbound](../../static/img/ADR/adr005/outbound_transfer.png)
+![outbound](/img/ADR/adr005/outbound_transfer.png)
 
 ## Steps to implement
 
@@ -233,7 +233,7 @@ Each data push is limited to 520 bytes, multiple data pushes must be used for la
 ## References
 
 1. [Ordinox: btc-service repo](https://github.com/ordinox/btc-service)
-2. [Ordinox: btc-service code report](../../static/img/ADR/adr005/btc-service-code-report.md)
-3. [Ordinox: btc-service dependency graph](../../static/img/ADR/adr005/btc-service-dep-graph.png)
+2. [Ordinox: btc-service code report](/img/ADR/adr005/btc-service-code-report.md)
+3. [Ordinox: btc-service dependency graph](/img/ADR/adr005/btc-service-dep-graph.png)
 4. [BRC-20 Indexer Implementation](https://github.com/unisat-wallet/libbrc20-indexer/tree/main)
 5. 

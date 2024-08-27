@@ -10,7 +10,7 @@ Done
 
 Several validators, acting as observers, form the signing committee. The purpose of this committee is to represent the vault owner across multiple external chains, eliminating a single point of failure through its distributed nature. Each member of the committee possesses a private share used during the signing process. Along with that, the committee has its public key. The public key is used to verify the signature is the same public key that corresponds to the original signing committee. This public key is known to everyone who needs to verify the signatures and is derived during the initial setup of the scheme.
 
-![tss_committee](../../static/img/ADR/adr002/tss_committee.png)
+![tss_committee](/img/ADR/adr002/tss_committee.png)
 
 ### Pool public key
 
@@ -18,7 +18,7 @@ In a Threshold Signature Scheme (TSS), generating the public key without any sin
 
 Essentially, the pool public key is a cryptographic public key that can be represented as the address associated with any blockchain that uses public keys as addresses. This ensures that the committee is recognized as the owner of the vault operating across different chains.
 
-![pool_public_key](../../static/img/ADR/adr002/pool_public_key.png)
+![pool_public_key](/img/ADR/adr002/pool_public_key.png)
 
 
 ### Validator rotation
@@ -42,7 +42,7 @@ Validator rotation is triggered by a governance proposal. The proposal specifies
 11. The vault migration involves a TSS-signed transfer of all tokens from the old vault to the new one. This transfer should be signed using the old pool public key.
 12. Once the transfer is complete, the observer sets the new key as active, stops the halt, and continues observing from the next block.
 
-![keygen](../../static/img/ADR/adr002/key_generation.png)
+![keygen](/img/ADR/adr002/key_generation.png)
 
 ### MsgKeyGen
 

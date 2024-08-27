@@ -2,7 +2,7 @@
 
 tBTC is a decentralized bridge between Bitcoin and Ethereum, enabling Bitcoin holders to access DeFi and the expanding Web3 universe without relying on intermediaries. It allows users to bridge their Bitcoin assets securely and without the need for trust in third parties.
 
-![tbtc_arch](../../static/img/comparisons/tbtc_arch.png)
+![tbtc_arch](/img/comparisons/tbtc_arch.png)
 
 ## Components
 
@@ -48,7 +48,7 @@ tBTC is a decentralized bridge between Bitcoin and Ethereum, enabling Bitcoin ho
 
 Nomic BTC is a Bitcoin sidechain based on the Tendermint consensus protocol, enabling the development of decentralized networks which coordinate to manage reserves of Bitcoin, allowing for custom application code and smart contracts which use Bitcoin as the native currency.
 
-![nbtc_arch](../../static/img/comparisons/nbtc_arch.png)
+![nbtc_arch](/img/comparisons/nbtc_arch.png)
 
 ## Components
 
@@ -95,7 +95,7 @@ Transaction on the BTC chain which spends from the current "reserve script" inco
 
 iBTC facilitates cross-chain asset transfers between Int3face and various external chains to enable decentralized cross-chain asset transfers, seamlessly connecting Int3face with other blockchain ecosystems.
 
-![ibtc_arch](../../static/img/comparisons/ibtc_arch.png)
+![ibtc_arch](/img/comparisons/ibtc_arch.png)
 
 ## Components
 

@@ -95,7 +95,7 @@ Create and execute gov proposal with the `MsgCreateAsset` message
 3. TON smart contract waits for the confirmation count threshold
 4. TON smart contract updates internal signers list to the new one
 
-![flow](../../static/img/ADR/adr012/adr012_inbound_outbound_flow.png)
+![flow](/img/ADR/adr012/adr012_inbound_outbound_flow.png)
 
 ## Steps to implement
 

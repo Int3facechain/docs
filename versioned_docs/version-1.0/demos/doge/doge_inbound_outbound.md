@@ -18,7 +18,7 @@ We will use our own DOGE validators funds.
 1. We need an int3 address to send funds to
 
 We can generate new address by `int3faced keys add "$your_key_name"`.
-![new_key](../../../static/img/demos/doge/new_key.png)
+![new_key](/img/demos/doge/new_key.png)
 
 We will use the address `int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt`
 
@@ -28,7 +28,7 @@ We will use the address `int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt`
 int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
 ```
 
-![init_balance](../../../static/img/demos/doge/init_balance.png)
+![init_balance](/img/demos/doge/init_balance.png)
 
 3. Select an UTXO to spend
 
@@ -36,7 +36,7 @@ int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
 dogecoin-cli listunspent 
 ```
 
-![list_unspent](../../../static/img/demos/doge/list_unspent.png)
+![list_unspent](/img/demos/doge/list_unspent.png)
 
 If you don't see any UTXO available, mine a block to receive the rewards `dogecoin-cli generate 1`, and run `listunspent` command again.
 
@@ -69,7 +69,7 @@ vouts='{
 dogecoin-cli createrawtransaction "$vins" "$vouts"
 ```
 
-![raw_transaction](../../../static/img/demos/doge/raw_transaction.png)
+![raw_transaction](/img/demos/doge/raw_transaction.png)
 
 5. We can verify that the transaction is correct
 
@@ -77,7 +77,7 @@ dogecoin-cli createrawtransaction "$vins" "$vouts"
 dogecoin-tx -regtest -json "$raw_tx"
 ```
 
-![decoded_raw_transaction](../../../static/img/demos/doge/decoded_raw_transaction.png)
+![decoded_raw_transaction](/img/demos/doge/decoded_raw_transaction.png)
 
 6. Sign the transaction
 
@@ -85,7 +85,7 @@ dogecoin-tx -regtest -json "$raw_tx"
 dogecoin-cli signrawtransaction $raw_tx
 ```
 
-![signed_tx](../../../static/img/demos/doge/signed_transaction.png)
+![signed_tx](/img/demos/doge/signed_transaction.png)
 
 7. Broadcast signed transaction to the DOGE
 
@@ -93,7 +93,7 @@ dogecoin-cli signrawtransaction $raw_tx
 dogecoin-cli sendrawtransaction $signed_tx
 ```
 
-![send_doge_transaction](../../../static/img/demos/doge/send_doge_transaction.png)
+![send_doge_transaction](/img/demos/doge/send_doge_transaction.png)
 
 8. Generate a block to include our transaction in the chain
 
@@ -109,7 +109,7 @@ Now the transaction should be observed by the Observer and sent to the Int3face 
 int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
 ```
 
-![inbound_balance](../../../static/img/demos/doge/inbound_balance.png)
+![inbound_balance](/img/demos/doge/inbound_balance.png)
 Now, we can see DOGE tokens in our wallet.
 
 ## Outbound Transfer
@@ -129,7 +129,7 @@ msJf78psekNDSaQwCA2qhYypJqVPWaCCAg
 int3faced tx bridge outbound-transfer msJf78psekNDSaQwCA2qhYypJqVPWaCCAg dogecoin-doge 5000000000000 --from doge_test
 ```
 
-![outbound_transaction](../../../static/img/demos/doge/outbound_transaction.png)
+![outbound_transaction](/img/demos/doge/outbound_transaction.png)
 
 3. We can check our balance again to see that DOGE tokens in Int3face were burt
 
@@ -137,7 +137,7 @@ int3faced tx bridge outbound-transfer msJf78psekNDSaQwCA2qhYypJqVPWaCCAg dogecoi
 int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
 ```
 
-![outbound_balance](../../../static/img/demos/doge/outbound_balance.png)
+![outbound_balance](/img/demos/doge/outbound_balance.png)
 
 4. Generate a block in DOGE to include transaction from the vault
 
@@ -151,5 +151,5 @@ dogecoin-cli generate 1
 dogecoin-cli listunspent 1 9999999 '["msJf78psekNDSaQwCA2qhYypJqVPWaCCAg"]'
 ```
 
-![outbound_doge_balance](../../../static/img/demos/doge/outbound_doge_balance.png)
+![outbound_doge_balance](/img/demos/doge/outbound_doge_balance.png)
 Now, we can see DOGE tokens in our wallet.

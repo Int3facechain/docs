@@ -122,7 +122,7 @@ A threshold signature scheme is a type of cryptographic protocol that enables a 
 
 Several validators, acting as observers, form the signing committee. The purpose of this committee is to represent the vault owner across multiple external chains, eliminating a single point of failure through its distributed nature. Each member of the committee possesses a private share used during the signing process. Along with that, the committee has its public key. The public key is used to verify the signature is the same public key that corresponds to the original signing committee. This public key is known to everyone who needs to verify the signatures and is derived during the initial setup of the scheme.
 
-![tss_committee](../../../static/img/common/tss_committee.png)
+![tss_committee](/img/common/tss_committee.png)
 
 ### Pool public key
 
@@ -130,7 +130,7 @@ In a Threshold Signature Scheme (TSS), generating the public key without any sin
 
 Essentially, the pool public key is a cryptographic public key that can be represented as the address associated with any blockchain that uses public keys as addresses. This ensures that the committee is recognized as the owner of the vault operating across different chains.
 
-![pool_public_key](../../../static/img/common/pool_public_key.png)
+![pool_public_key](/img/common/pool_public_key.png)
 
 
 ### Validator rotation
@@ -152,7 +152,7 @@ _To be determined._
 
 The following provides a high-level overview of the transfer design. For more in-depth information, refer to the detailed processes described further.
 
-![image.png](../../../static/img/common/mint_burn.png)
+![image.png](/img/common/mint_burn.png)
 
 ### Inbound transfers
 
@@ -167,7 +167,7 @@ The following provides a high-level overview of the transfer design. For more in
 9. A transfer is deemed **finalized** once the count of voters for it meets the required vote threshold, as set by the module parameter.
 10. If the transfer is **finalized**, then coins are minted to the destination address through the `x/tokenfactory` module.
 
-![inbound_transfers](../../../static/img/common/inbound_transfer.png)
+![inbound_transfers](/img/common/inbound_transfer.png)
 
 As a security precaution, all non-finalized transfers are recorded in the state using a `external_id | external_height` composite key during the vote accumulation phase. This approach is designed to guard against the potential of malicious validators submitting transfers with incorrect `external_height` values. Essentially, a transfer entry that has an incorrect `external_height` is unlikely to receive sufficient confirmations, and as a result, it will not reach the finalization stage.
 
@@ -181,13 +181,13 @@ As a security precaution, all non-finalized transfers are recorded in the state 
 6. Once the TSS Server collects all the needed signatures, it starts the leader election process.
 7. The selected leader broadcasts the transfer to the external chain, releasing the **vault** and transferring coins to the destination address.
 
-![outbound_transfers](../../../static/img/common/outbound_transfer.png)
+![outbound_transfers](/img/common/outbound_transfer.png)
 
 ### Observer
 
 The high-level diagram of the observer:
 
-![observer](../../../static/img/common/observer.png)
+![observer](/img/common/observer.png)
 
 #### External chain to Int3face
 
@@ -198,11 +198,11 @@ The high-level diagram of the observer:
 - If confirmed, sends them to the destination chain client for broadcasting.
 - If not confirmed, returns them to the queue for later processing.
 
-![observer_int3face_inbound](../../../static/img/common/observer_int3face_inbound.png)
+![observer_int3face_inbound](/img/common/observer_int3face_inbound.png)
 
 #### Int3face to external chain
 
-![observer_int3face_outbound](../../../static/img/common/observer_int3face_outbound.png)
+![observer_int3face_outbound](/img/common/observer_int3face_outbound.png)
 
 ### UTXO Chain Client
 
@@ -234,7 +234,7 @@ Regularly retrieves new Bitcoin blocks and alerts the observer about transaction
 
 More on the [UTXO transaction format](https://developer.bitcoin.org/reference/transactions.html#raw-transaction-format)
 
-![utxo_scanner_flow](../../../static/img/common/utxo_observer_flow.png)
+![utxo_scanner_flow](/img/common/utxo_observer_flow.png)
 
 #### Reorganisation
 
@@ -245,7 +245,7 @@ In case of the chain reorganisation the next flow should be applied:
 3. Notify the observer about affected heights, so it can remove pending transactions from its queue.
 4. Re-scan each block at every affected height.
 
-![utxo_reorg_flow](../../../static/img/common/utxo_reorg_flow.png)
+![utxo_reorg_flow](/img/common/utxo_reorg_flow.png)
 
 ### Int3face Chain Client
 
@@ -266,7 +266,7 @@ Allows signing and broadcasting transactions with `MsgInboundTransfer` messages 
 5. Encode the transaction using the `TxEncoder`.
 6. [Broadcast](https://buf.build/cosmos/cosmos-sdk/docs/main:cosmos.tx.v1beta1#cosmos.tx.v1beta1.Service.BroadcastTx) transaction to the chain.
 
-![int3face_broadcast](../../../static/img/common/int3face_broadcast.png)
+![int3face_broadcast](/img/common/int3face_broadcast.png)
 
 #### Int3face chain observer
 
@@ -278,7 +278,7 @@ Subscribes to the `NewBlockEvent`s from the Int3face chain and notifies the **ob
 - Check if any transaction contains the `MsgOutboundTransfer` message.
 - Notify the **observer** about every found outbound message.
 
-![int3face_scanner_flow](../../../static/img/common/int3face_observer_flow.png)
+![int3face_scanner_flow](/img/common/int3face_observer_flow.png)
 
 ### Quarantine
 
@@ -289,7 +289,7 @@ There are two methods for managing quarantined assets:
 * Simply storing the queue in the state. Here, if rate limits are exceeded, the coins are added to the state queue without minting. Upon release, the tokenfactory's Mint function is called for the relevant addresses.
 * Minting all coins to a special **quarantine** address (not the destination address) immediately after finalization. The coins are then transferred to their intended addresses upon release following a governance proposal. This method still requires the state queue, but operations are based solely on straightforward transfers. It also offers a transparent view of the **quarantine**, represented by a dedicated **quarantine** vault on Int3face.
 
-![quarantine](../../../static/img/common/quarantine.png)
+![quarantine](/img/common/quarantine.png)
 
 For **quarantining**, a queue is utilized instead of a map to allow sequential execution of transfers and to potentially filter out malicious transactions. To better understand the difference, consider the following example.
 
@@ -564,7 +564,7 @@ message MsgInboundTransfer {
 
 The diagram below shows the detailed workflow for processing the **MsgInboundTransfer**.
 
-![workflow](../../static/img/common/inbound_tranfer_workflow.png)
+![workflow](/img/common/inbound_tranfer_workflow.png)
 
 ### OutboundTransfer
 

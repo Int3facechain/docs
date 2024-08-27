@@ -21,11 +21,11 @@ In Babylon, each finality provider has its own address in Bitcoin, which can be 
 
 Bitcoin delegation process:
 
-![adr003_babylon_staking](../../static/img/ADR/adr003/adr003_babylon_staking.png)
+![adr003_babylon_staking](/img/ADR/adr003/adr003_babylon_staking.png)
 
 Bitcoin transfer process:
 
-![adr003_int3face_transferring](../../static/img/ADR/adr003/adr003_int3face_transferring.png)
+![adr003_int3face_transferring](/img/ADR/adr003/adr003_int3face_transferring.png)
 
 The idea is to use the Int3face vault address as the staking vault. All users who use it for staking will receive an equivalent amount of funds in Cosmos-based tokens. Conversely, everyone intending to transfer will simultaneously receive bonus fees for staking. This can be considered a form of **Bitcoin Liquid Staking**.
 
@@ -33,7 +33,7 @@ The idea is to use the Int3face vault address as the staking vault. All users wh
 
 **Distribute vault funds across multiple finality providers**. As soon as the Int3face vault receives an incoming transfer, it stakes the funds using several finality providers.
 
-![adr003_babylon_int3face_option_1](../../static/img/ADR/adr003/adr003_babylon_int3face_option_1.png)
+![adr003_babylon_int3face_option_1](/img/ADR/adr003/adr003_babylon_int3face_option_1.png)
 
 Difficulties:
 
@@ -47,7 +47,7 @@ Difficulties:
 
 **Transfer the asset to Babylon using IBC and stake directly, bypassing Bitcoin**. This option involves establishing the IBC connection, allowing special wrapped tokens to be transferred to Babylon and staked directly without interacting with Bitcoin.
 
-![adr003_babylon_int3face_option_2](../../static/img/ADR/adr003/adr003_babylon_int3face_option_2.png)
+![adr003_babylon_int3face_option_2](/img/ADR/adr003/adr003_babylon_int3face_option_2.png)
 
 Difficulties:
 
