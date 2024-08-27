@@ -79,12 +79,12 @@ const sidebars = {
       ],
     },
     {
-      label: "Comparison",
+      label: "Comparisons",
       type: "category",
       items: [
-        "comparison/Int3face-THOR-Zeta",
-        "comparison/tBTC-iBTC-nBTC",
-        "comparison/tBTC-iBTC-nBTC-tech"
+        "comparisons/Int3face-THOR-Zeta",
+        "comparisons/tBTC-iBTC-nBTC",
+        "comparisons/tBTC-iBTC-nBTC-tech"
       ],
     },
     {
