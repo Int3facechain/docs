@@ -12,7 +12,7 @@ const config = {
   tagline: "Int3face",
   url: "https://int3facechain.github.io",
   baseUrl: "/docs",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 

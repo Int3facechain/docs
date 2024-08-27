@@ -95,12 +95,12 @@ _For outbound transfers, the process is to be determined._
 
 ### Minting and burning
 
-The module utilizes [tokenfactory](x/tokenfactory/README.md) functionality to facilitate cross-chain transfers. The core idea is to have Int3face-based representations of assets from various external chains to operate with them during the transfers. For instance, transferring 0.05 BTC from Bitcoin would result in receiving an equivalent 5 iBTC on Int3face, assuming a 1:100 ratio, and vice versa (note this is a hypothetical example with made-up token names and ratios). This is achieved by creating unique denoms for each external asset, managed by the `x/bridge` module, which acts as the admin for all such denoms (refer to [CreateDenom](x/tokenfactory/README.md#createdenom) for details).
+The module utilizes tokenfactory functionality to facilitate cross-chain transfers. The core idea is to have Int3face-based representations of assets from various external chains to operate with them during the transfers. For instance, transferring 0.05 BTC from Bitcoin would result in receiving an equivalent 5 iBTC on Int3face, assuming a 1:100 ratio, and vice versa (note this is a hypothetical example with made-up token names and ratios). This is achieved by creating unique denoms for each external asset, managed by the `x/bridge` module, which acts as the admin for all such denoms (refer to `CreateDenom` for details).
 
 The transfer process is straightforward:
 
-* When the `x/bridge` module receives an inbound transfer, it starts accumulating votes for this transfer. Once the vote threshold is met, it employs the tokenfactory's [Mint](x/tokenfactory/README.md#mint) method to mint the appropriate amount of coins for the destination address.
-* For an outbound transfer, the `x/bridge` module uses the tokenfactory's [Burn](x/tokenfactory/README.md#burn) method to burn the specified amount of coins from the sender's address. Subsequently, an **EventOutboundTransfer** event is emitted and handled by the **super valset** through the **observer**.
+* When the `x/bridge` module receives an inbound transfer, it starts accumulating votes for this transfer. Once the vote threshold is met, it employs the tokenfactory's `Mint` method to mint the appropriate amount of coins for the destination address.
+* For an outbound transfer, the `x/bridge` module uses the tokenfactory's `Burn` method to burn the specified amount of coins from the sender's address. Subsequently, an **EventOutboundTransfer** event is emitted and handled by the **super valset** through the **observer**.
 
 ### Rate limiting
 
