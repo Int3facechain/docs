@@ -39,7 +39,7 @@ which requires users to actively manage their staked tokens on their own.
 
 ## Example
 
-Alice has 500 GAMM tokens bonded to the ATOM <> OSMO, she will have the equivalent value of OSMO minted, delegated to her chosen staker, and burned for her each day with Superfluid staking. \
+Alice has 500 GAMM tokens bonded to the ATOM - OSMO, she will have the equivalent value of OSMO minted, delegated to her chosen staker, and burned for her each day with Superfluid staking. \
 On the user side, all she has to know is who she wants to delegate her tokens to. In order to switch delegation, she has to unbond her tokens from the pool first and then redeposit. \
 Bob, who has a share of the same liquidity pool before Superfluid Staking went live, also has to re-deposit into the pool for the above process to kickstart.
 
