@@ -10,8 +10,8 @@ const katex = require("rehype-katex");
 const config = {
   title: "Int3face Docs",
   tagline: "Int3face",
-  url: "https://int3facechain.github.io/docs/",
-  baseUrl: "/",
+  url: "https://int3facechain.github.io",
+  baseUrl: "/docs",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
