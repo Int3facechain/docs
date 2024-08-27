@@ -106,7 +106,7 @@ Top most used block explorers offered by the Cosmos ecosystem: https://cosmos.ne
           - BDJuno: a middleware that fetches data from the full-node and stores it in the DB.
           - Hasura: a GraphQL API that serves data to the frontend.
       - Scheme:
-        + ![image](../img/big_dipper_architecture.png)
+        + ![image](/img/common/big_dipper_architecture.png)
 
 ### Comparative Table of Blockchain Explorers
 
