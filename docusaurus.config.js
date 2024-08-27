@@ -81,7 +81,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "neutron/overview",
+            docId: "int3face/overview",
             position: "left",
             label: "Introduction",
           },

@@ -1,0 +1,22 @@
+@startuml
+
+participant "Int3face" as int3face
+participant "File system" as filesys
+participant "Observer" as observer
+participant "External chain" as external
+
+observer <-- filesys : **TSS data**
+observer <-- filesys : **UTXO params**
+observer <-- filesys : **"Int3face" params**
+
+observer -> int3face : create WebSocket connection
+
+observer -> external : create RPC connection
+observer <-- external : **last-observer-height**
+
+... Set up TSS server...
+
+observer -> int3face : start observing from **the latest height**
+observer -> external : start observing from **last-observer-height**
+
+@enduml

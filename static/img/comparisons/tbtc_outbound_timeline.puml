@@ -1,0 +1,16 @@
+@startuml "tbtc_outbound_timeline"
+
+== tBTC Outbound Timeline ==
+
+participant "User" as user
+participant "tBTC" as tbtc
+participant "Ethereum" as eth
+participant "TSS" as tss
+participant "Bitcoin" as btc
+
+user --> tbtc : Request withdrawal
+tbtc --> eth : ~2.5 minutes (awaits confirmations, burn tokens)
+tbtc --> tss : ~8 minutes (signing)
+tss --> btc : ~60 minutes (awaits confirmations, release tokens)
+
+@enduml

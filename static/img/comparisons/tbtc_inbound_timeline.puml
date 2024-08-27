@@ -1,0 +1,15 @@
+@startuml "tbtc_inbound_timeline"
+
+== tBTC Inbound Timeline ==
+
+participant "User" as user
+participant "BTC Vault" as btc_vault
+participant "tBTC Node" as tbtc_node
+participant "Ethereum" as eth
+
+user --> btc_vault : Deposits tokens
+user --> tbtc_node : Reveals transaction to tBTC
+btc_vault --> tbtc_node : ~60 minutes (awaits confirmations)
+tbtc_node --> eth : ~2.5 minutes (awaits confirmations, mint tokens)
+
+@enduml

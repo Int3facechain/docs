@@ -1,0 +1,47 @@
+@startuml
+skinparam ParticipantBackgroundColor PaleGreen
+skinparam ParticipantBorderColor DarkGreen
+skinparam ParticipantFontColor DarkGreen
+skinparam ParticipantFontSize 16
+
+skinparam DatabaseBackgroundColor Gold
+skinparam DatabaseBorderColor DarkGoldenRod
+skinparam DatabaseFontColor DarkGoldenRod
+skinparam DatabaseFontSize 16
+
+skinparam ArrowColor DarkSlateGray
+skinparam ArrowFontColor Navy
+skinparam ArrowFontSize 14
+
+participant "Validator\n(Node)" as V
+participant "Governance\nModule" as G
+participant "Cosmovisor\n(Automation)" as C
+database "Blockchain\nState" as B
+
+' Pre-Upgrade Setup
+group Pre-Upgrade Setup
+    V -> C : Set up Cosmovisor
+    note right of C : "Cosmovisor monitors\nblock height"
+end
+
+' Proposal Creation and Approval
+group Proposal Creation and Approval
+    V -> G : Submit Proposal\n(Software Upgrade)
+    G -> V : Proposal Passed
+    note right of G : "Governance approval\nprocess"
+end
+
+' Upgrade Trigger by Blockchain State
+group Upgrade Trigger
+    B -> C : Block height reached
+    C -> C : Auto-upgrade to new binary
+    note right of C : "Switch to new binary\nShutdown old process\nStart new process"
+end
+
+' Post-Upgrade Operations
+group Post-Upgrade Operations
+    C -> B : New binary operational
+    note right of B : "Chain continues with\nnew software version"
+end
+
+@enduml

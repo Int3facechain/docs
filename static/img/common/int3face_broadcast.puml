@@ -1,0 +1,33 @@
+@startuml int3face_broadcast
+
+cloud "Observer" as obs
+cloud "Int3face" as int3
+
+artifact "Transfer Notification" as notif
+
+folder "Client" as client {
+    artifact "MsgInboundTransfer" as msg
+    artifact "Unsigned Transaction" as unsigned
+    artifact "Signed Transaction" as signed
+
+    rectangle "Validator's keyring" as keyring
+    rectangle "Fees/Gas limit" as params
+
+    node "sdk.TxEncoder" as enc
+}
+
+obs -d-> notif: "Observer sends notification about inbound transfer"
+
+notif -d-> msg: "Build `MsgInboundTransfer` message"
+
+params -d-> unsigned
+msg -d-> unsigned: "Build unsigned transaction"
+
+keyring -d-> signed
+unsigned -d-> signed: "Sign the transaction"
+
+signed -d-> enc: "Encode the transaction"
+
+enc -d-> int3: "Broadcast the transaction"
+
+@enduml

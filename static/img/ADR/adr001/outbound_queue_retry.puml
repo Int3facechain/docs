@@ -1,0 +1,36 @@
+@startuml
+
+participant "Alice" as alice
+participant "Int3face" as int3face
+participant "Observer" as observer
+participant "External chain" as external
+
+alice -> int3face : MsgOutboundTransferRetry
+note right
+    Contains the Int3face hash of
+    MsgOutboundTransfer willing to retry
+end note
+
+observer -> int3face : witness MsgOutboundTransferRetry
+
+observer -> observer : add transfer to the queue
+
+observer -> external : check the history
+note left
+    Scan through all txs dedicated to the vault within the retry
+    period. If one of the tx memos contains the Int3face hash
+    given in MsgOutboundTransferRetry, then the transfer is
+    already executed. Otherwise, execute it now.
+end note
+
+alt tx is not found
+
+    observer -> observer : sign transfer with TSS
+
+    observer -> external : broadcast and include int3face hash
+
+    observer -> observer : clean the internal queue
+
+end
+
+@enduml

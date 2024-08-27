@@ -1,0 +1,23 @@
+@startuml
+
+collections poolPublicKey [
+<b>Pool public key
+
+----
+publicKey1
+publicKey2
+...
+publicKeyN
+]
+
+card "BTC vault address" as btc
+card "DOGE vault address" as doge
+card "LTC vault address" as ltc
+card "BCH vault address" as bch
+
+poolPublicKey -l-> btc
+poolPublicKey -d-> doge
+poolPublicKey -r-> ltc
+poolPublicKey -u-> bch
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml utxo_reorg_flow
+start
+
+:Reorganisation detected;
+
+while (Next block in history?) is (yes)
+    
+    :Request block hash from the chain by height;
+
+    if (Hash are equal?) then (yes)
+        break
+    else (no)
+        :Collect the height;
+    endif
+
+endwhile (no)
+
+:Signal observer about affected heights;
+:Start rescan process from the lowest affected block height;
+
+end
+@enduml

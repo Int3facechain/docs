@@ -1,0 +1,29 @@
+@startuml
+
+participant "Alice" as alice
+participant "Int3face" as int3face
+participant "Observer" as observer
+participant "External chain" as external
+
+alice -> int3face : MsgOutboundTransfer
+note right
+    Transfer contains external chain address
+end note
+
+int3face -> alice : burn tokens
+
+observer -> int3face : witness MsgOutboundTransfer
+
+observer -> observer : add the transfer to the queue
+
+observer -> observer : sign the transfer with TSS
+
+observer -> external : broadcast
+note left
+    Include Int3face transfer hash to the tx memo
+end note
+
+observer -> observer : update the queue
+
+
+@enduml

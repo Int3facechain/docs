@@ -15,137 +15,36 @@
 const sidebars = {
   docs: [
     {
-      label: "Neutron",
+      label: "Int3face",
       type: "category",
       items: [
-        "neutron/overview",
-        "neutron/faq",
+        "int3face/overview",
         {
           label: "Build and run",
           type: "category",
           items: [
-            "neutron/build-and-run/overview",
-            "neutron/build-and-run/neutron-build",
-            "neutron/build-and-run/neutron-docker",
-            "neutron/build-and-run/cosmopark",
-            "neutron/build-and-run/localnet",
+            "int3face/build-and-run/bch_deploy",
+            "int3face/build-and-run/brc20",
+            "int3face/build-and-run/btc_deploy",
+            "int3face/build-and-run/doge_deploy",
+            "int3face/build-and-run/ltc_deploy",
           ],
         },
-        "neutron/consumer-chain-launch",
-        "neutron/neutron-core-releases",
-        "neutron/price-feeds",
         {
           label: "Neutron DAO",
           type: "category",
           items: [
-            "neutron/dao/overview",
-            "neutron/dao/overrules",
-            "neutron/dao/dao-dao-diff",
-            "neutron/dao/params",
+            "int3face/dao/overview",
+            "int3face/dao/overrules",
+            "int3face/dao/dao-dao-diff",
+            "int3face/dao/params",
           ],
         },
         {
           label: "Tokenomics",
           type: "category",
           items: [
-            "neutron/tokenomics/overview",
-            {
-              type: "category",
-              label: "Reserve",
-              items: [
-                "neutron/tokenomics/reserve/overview",
-                "neutron/tokenomics/reserve/messages",
-                "neutron/tokenomics/reserve/queries",
-              ],
-            },
-            {
-              type: "category",
-              label: "Distribution",
-              items: [
-                "neutron/tokenomics/distribution/overview",
-                "neutron/tokenomics/distribution/messages",
-                "neutron/tokenomics/distribution/queries",
-              ],
-            },
-            {
-              label: "Token Generation Event",
-              type: "category",
-              items: [
-                "neutron/token-generation-event/overview",
-                {
-                  type: "category",
-                  label: "Airdrop",
-                  items: [
-                    "neutron/token-generation-event/airdrop/overview",
-                    "neutron/token-generation-event/airdrop/messages",
-                    "neutron/token-generation-event/airdrop/queries",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "Auction",
-                  items: [
-                    "neutron/token-generation-event/auction/overview",
-                    "neutron/token-generation-event/auction/messages",
-                    "neutron/token-generation-event/auction/queries",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "Credits",
-                  items: [
-                    "neutron/token-generation-event/credits/overview",
-                    "neutron/token-generation-event/credits/messages",
-                    "neutron/token-generation-event/credits/queries",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "Lockdrop",
-                  items: [
-                    "neutron/token-generation-event/lockdrop/overview",
-                    "neutron/token-generation-event/lockdrop/messages",
-                    "neutron/token-generation-event/lockdrop/queries",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "LP Vesting",
-                  items: [
-                    "neutron/token-generation-event/vesting-lp/overview",
-                    "neutron/token-generation-event/vesting-lp/messages",
-                    "neutron/token-generation-event/vesting-lp/queries",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "Investors Vesting",
-                  items: [
-                    "neutron/token-generation-event/investors-vesting/overview",
-                    "neutron/token-generation-event/investors-vesting/messages",
-                    "neutron/token-generation-event/investors-vesting/queries",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "Oracle",
-                  items: [
-                    "neutron/token-generation-event/oracle/overview",
-                    "neutron/token-generation-event/oracle/messages",
-                    "neutron/token-generation-event/oracle/queries",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "Band Price Feed",
-                  items: [
-                    "neutron/token-generation-event/price-feed/overview",
-                    "neutron/token-generation-event/price-feed/messages",
-                    "neutron/token-generation-event/price-feed/queries",
-                  ],
-                },
-              ],
-            },
+            "int3face/tokenomics/overview",
           ],
         },
         {
@@ -153,175 +52,36 @@ const sidebars = {
           type: "category",
           items: [
             {
-              label: "Admin module",
+              label: "Bridge",
               type: "category",
               items: [
-                "neutron/modules/admin-module/overview",
-                "neutron/modules/admin-module/messages",
               ],
             },
             {
-              label: "Interchain Transactions",
+              label: "IBC Rate Limit",
               type: "category",
               items: [
-                "neutron/modules/interchain-txs/overview",
-                "neutron/modules/interchain-txs/messages",
-                "neutron/modules/interchain-txs/client",
-                "neutron/modules/interchain-txs/state",
-                "neutron/modules/interchain-txs/events",
               ],
             },
             {
-              label: "Interchain Queries",
+              label: "Cross-chain Rate Limit",
               type: "category",
               items: [
-                "neutron/modules/interchain-queries/overview",
-                "neutron/modules/interchain-queries/messages",
-                "neutron/modules/interchain-queries/client",
-                "neutron/modules/interchain-queries/state",
-                "neutron/modules/interchain-queries/events",
               ],
             },
             {
-              label: "Dex",
+              label: "Quarantine",
               type: "category",
               items: [
-                {
-                  label: "Overview",
-                  type: "category",
-                  items: [
-                    "neutron/modules/dex/overview/overview",
-                    {
-                      label: "Concepts",
-                      type: "category",
-                      items: [
-                        "neutron/modules/dex/overview/concepts/amms-and-orderbooks",
-                        "neutron/modules/dex/overview/concepts/liquidity-pools",
-                        "neutron/modules/dex/overview/concepts/ticks",
-                        "neutron/modules/dex/overview/concepts/tick-liquidity",
-                        "neutron/modules/dex/overview/concepts/liquidity-iteration",
-                        "neutron/modules/dex/overview/concepts/swaps",
-                        "neutron/modules/dex/overview/concepts/fees",
-                      ],
-                    },
-                  ],
-                },
-                "neutron/modules/dex/messages",
-                "neutron/modules/dex/client",
               ],
             },
             {
-              label: "Transfer",
+              label: "Token Factory",
               type: "category",
               items: [
-                "neutron/modules/transfer/overview",
-                "neutron/modules/transfer/state",
-                "neutron/modules/transfer/messages",
-              ],
-            },
-            {
-              label: "Contract Manager",
-              type: "category",
-              items: [
-                "neutron/modules/contract-manager/overview",
-                "neutron/modules/contract-manager/client",
-                "neutron/modules/contract-manager/state",
-              ],
-            },
-            {
-              label: "Fee Refunder",
-              type: "category",
-              items: [
-                "neutron/modules/feerefunder/overview",
-                "neutron/modules/feerefunder/client",
-                "neutron/modules/feerefunder/state",
-                "neutron/modules/feerefunder/events",
-              ],
-            },
-            {
-              label: "Fee Burner",
-              type: "category",
-              items: [
-                "neutron/modules/feeburner/overview",
-                "neutron/modules/feeburner/client",
-                "neutron/modules/feeburner/state",
-              ],
-            },
-            {
-              label: "Cron",
-              type: "category",
-              items: [
-                "neutron/modules/cron/overview",
-                "neutron/modules/cron/client",
-                "neutron/modules/cron/state",
-                "neutron/modules/cron/metrics",
-              ],
-            },
-            {
-              label: "3rd Party Modules",
-              type: "category",
-              items: [
-                {
-                  label: "Skip",
-                  type: "category",
-                  items: [
-                    {
-                      label: "Block SDK",
-                      type: "category",
-                      items: [
-                        "neutron/modules/3rdparty/skip/block-sdk/overview",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  label: "Cosmos Hub",
-                  type: "category",
-                  items: [
-                    {
-                      label: "Global Fee",
-                      type: "category",
-                      items: [
-                        "neutron/modules/3rdparty/cosmoshub/globalfee/overview",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "Osmosis",
-                  items: [
-                    {
-                      label: "Token Factory",
-                      type: "category",
-                      items: [
-                        "neutron/modules/3rdparty/osmosis/tokenfactory/overview",
-                        "neutron/modules/3rdparty/osmosis/tokenfactory/messages",
-                        "neutron/modules/3rdparty/osmosis/tokenfactory/params",
-                      ],
-                    },
-                    {
-                      label: "IBC Hooks",
-                      type: "category",
-                      items: [
-                        "neutron/modules/3rdparty/osmosis/ibc-hooks/overview",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  label: "Strangelove",
-                  type: "category",
-                  items: [
-                    {
-                      label: "Packet Forward Middleware",
-                      type: "category",
-                      items: [
-                        "neutron/modules/3rdparty/strangelove/packet-forward-middleware/overview",
-                      ],
-                    },
-                  ],
-                },
+                "int3face/modules/tokenfactory/overview",
+                "int3face/modules/tokenfactory/messages",
+                "int3face/modules/tokenfactory/params",
               ],
             },
           ],
@@ -329,57 +89,44 @@ const sidebars = {
       ],
     },
     {
-      label: "Relaying",
-      type: "category",
-      items: ["relaying/ibc-relayer", "relaying/icq-relayer"],
-    },
-    {
-      label: "Tutorials",
+      label: "Comparison",
       type: "category",
       items: [
-        "tutorials/overview",
-        "tutorials/introduction_to_cosmwasm",
-        "tutorials/cosmwasm_remix",
-        "tutorials/cosmwasm_wasmkit",
-        "tutorials/cosmwasm_ica",
-        "tutorials/cosmwasm_icq",
-        {
-          label: "Integration tests",
-          type: "category",
-          items: [
-            {
-              label: "Chain",
-              type: "doc",
-              id: "tutorials/integration-tests/chain",
-            },
-            {
-              label: "Smart contracts",
-              type: "doc",
-              id: "tutorials/integration-tests/smart_contracts",
-            },
-          ],
-        },
-        {
-          label: "Indexers",
-          type: "category",
-          items: ["tutorials/indexers/intro", "tutorials/indexers/subquery"],
-        },
+        "comparison/Int3face-THOR-Zeta",
+        "comparison/tBTC-iBTC-nBTC",
+        "comparison/tBTC-iBTC-nBTC-tech"
       ],
     },
     {
-      label: "Deployed contracts",
+      label: "Deployments",
       type: "category",
-      items: ["deployment/testnet", "deployment/mainnet"],
+      items: ["deployment/testnet"],
     },
     {
-      label: "Other tools",
+      label: "Demos",
       type: "category",
       items: [
-        {
-          label: "Rehearsal",
-          type: "category",
-          items: ["other_tools/rehearsal/overview"],
-        },
+        "demos/btc/btc_inbound_outbound",
+        "demos/doge/doge_inbound_outbound"
+      ],
+    },
+    {
+      label: "ADR",
+      type: "category",
+      items: [
+        "ADR/adr-001-grace-period",
+        "ADR/adr-002-dynamic-committee",
+        "ADR/adr-003-babylon",
+        "ADR/adr-004-solana-integration",
+        "ADR/adr-005-ordinals",
+        "ADR/adr-006-metrics",
+        "ADR/adr-007-e2e-tests",
+        "ADR/adr-008-automatic-signer-list",
+        "ADR/adr-009-blockchain-explorer",
+        "ADR/adr-010-node-ungrades",
+        "ADR/adr-011-superfluid-staking",
+        "ADR/adr-012-ton-integration",
+        "ADR/adr-013-rate-limiting"
       ],
     },
   ],

@@ -1,0 +1,44 @@
+@startuml
+skinparam packageStyle rect
+
+package "Node 1" {
+    [Prometheus] as prometheus
+    [Grafana] as grafana
+    [Node-exporter] as node_exporter
+    [Cosmos-exporter] as cosmos_exporter
+    [Int3obsd] as int3face
+    [Int3faced] as observer
+}
+
+package "Node 2" {
+    [Node-exporter] as node_exporter_2
+    [Cosmos-exporter] as cosmos_exporter_2
+    [Int3obsd] as int3face_2
+    [Int3faced] as observer_2
+}
+
+package "Node 3" {
+    [Node-exporter] as node_exporter_3
+    [Cosmos-exporter] as cosmos_exporter_3
+    [Int3obsd] as int3face_3
+    [Int3faced] as observer_3
+}
+
+prometheus -down-> node_exporter
+prometheus -down-> cosmos_exporter
+prometheus -down-> int3face
+prometheus -down-> observer
+
+prometheus --right-> node_exporter_2
+prometheus --right-> cosmos_exporter_2
+prometheus --down-> int3face_2
+prometheus --right-> observer_2
+
+prometheus ---left-> node_exporter_3
+prometheus --left-> cosmos_exporter_3
+prometheus --left-> int3face_3
+prometheus --left-> observer_3
+
+grafana -down-> prometheus
+
+@enduml

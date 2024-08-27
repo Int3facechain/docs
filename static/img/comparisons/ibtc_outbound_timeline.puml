@@ -1,0 +1,16 @@
+@startuml "ibtc_outbound_timeline"
+
+== iBTC Outbound Timeline ==
+
+participant "User" as user
+participant "Int3face" as int3
+participant "Observer" as observer
+participant "TSS" as tss
+participant "Bitcoin" as btc
+
+user --> int3 : Requests a withdrawal
+int3 --> observer : ~6 seconds (awaits for the block, observes request)
+observer --> tss : ~10 seconds (signing)
+tss --> btc : ~60 minutes (awaits confirmations)
+
+@enduml
