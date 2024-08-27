@@ -1,0 +1,73 @@
+@startuml "zetachain_failure"
+
+title "Failed Contract Call"
+
+== Chain A -> Chain B ==
+
+participant "Chain A" as chainA
+participant "ZetaClient 1" as zetaclient1
+participant "ZetaChain" as zeta
+participant "ZetaClient 2" as zetaclient2
+participant "Chain B" as chainB
+
+-> chainA : Call the contract
+
+chainA <- chainA : Generate some\nmethod call event
+
+chainA <- zetaclient1: Witness\nthe call event
+
+zetaclient1 -> zeta: Submit the call
+
+zeta -> zetaclient2: Sign the call
+
+zetaclient2 -> chainB #red: Trigger execution\nof the call
+
+chainB -> chainB : Process the call
+
+zetaclient2 -> chainB : Witness\nthe confirmation
+
+zetaclient2 -> zeta : Confirmation
+
+note over zeta #lightgreen
+    TX status **Confirmed**
+end note
+
+== Chain B Execution Result ==
+
+note over chainB #pink
+    Execution error!
+end note
+
+zetaclient2 -> chainB : Witness the\nexecution event
+
+zetaclient2 -> zeta : Submit the result
+
+note over zeta #pink
+    TX status **PendingRevert**
+end note
+
+zeta -> zetaclient1 : Sign the revert tx
+
+zetaclient1 -> chainA : Submit the revert tx
+
+chainA <- chainA : Process revert
+
+zetaclient1 -> chainA : Witness the\nrevert event
+
+    zetaclient1 -> zeta : Submit the\nrevert result
+
+alt "Successful revert"
+    note over zeta #lightgreen
+        TX status **Reverted**
+    end note
+
+else "Cannot revert the state"
+
+    note over zeta #pink
+        Revert execution error!
+
+        TX status **Aborted**
+    end note
+end
+
+@enduml

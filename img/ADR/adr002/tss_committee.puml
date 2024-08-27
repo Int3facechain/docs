@@ -1,0 +1,34 @@
+@startuml
+
+folder "Signing committee" as committee1 {
+    node "Validator 1" as val1
+    card "Private share 1" as privateKey1
+    card "Public key 1" as publicKey1
+    val1 -d-> privateKey1
+    val1 -u-> publicKey1
+
+    node "Validator 2" as val2
+    card "Private share 2" as privateKey2
+    card "Public key 2" as publicKey2
+    val2 -d-> privateKey2
+    val2 -u-> publicKey2
+
+    node "Validator 3" as val3
+    card "Private share 3" as privateKey3
+    card "Public key 3" as publicKey3
+    val3 -d-> privateKey3
+    val3 -u-> publicKey3
+
+    node "Validator 4" as val4
+    card "Private share 4" as privateKey4
+    card "Public key 4" as publicKey4
+    val4 -d-> privateKey4
+    val4 -u-> publicKey4
+
+}
+
+collections "Pool public key" as poolPublicKey
+
+committee1 --> poolPublicKey
+
+@enduml

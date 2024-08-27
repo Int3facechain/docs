@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net" modified="2024-05-10T10:35:36.476Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.42" etag="8vE-gxzaXcznSQO2IZOR" version="24.3.1" type="device">
+  <diagram name="Page-1" id="bzpqcyHsf8nn75IAjDuu">
+    <mxGraphModel dx="1380" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WdGRPk9fFAtlprDExvmq-3" value="Bitcoin API" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="320" width="180" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-5" value="Own Full Node" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="WdGRPk9fFAtlprDExvmq-3">
+          <mxGeometry x="30" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-6" value="3rd-party&lt;div&gt;Dedicated Node&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="WdGRPk9fFAtlprDExvmq-3">
+          <mxGeometry x="30" y="190" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-7" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0;exitY=0;exitDx=50;exitDy=0;exitPerimeter=0;entryX=0.425;entryY=1.038;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WdGRPk9fFAtlprDExvmq-3" source="WdGRPk9fFAtlprDExvmq-6" target="WdGRPk9fFAtlprDExvmq-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="220" as="sourcePoint" />
+            <mxPoint x="130" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-8" value="OR" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WdGRPk9fFAtlprDExvmq-7">
+          <mxGeometry x="0.1114" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-4" value="Int3face API" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="390" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-1" value="iBTC Node" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="WdGRPk9fFAtlprDExvmq-4">
+          <mxGeometry x="30" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-9" value="Bitcoin" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-10" value="Int3face" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="270" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-2" value="Observer" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-12" value="Osmosis" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-13" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.875;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WdGRPk9fFAtlprDExvmq-9" target="WdGRPk9fFAtlprDExvmq-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="570" as="sourcePoint" />
+            <mxPoint x="420" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.021;entryY=0.513;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="WdGRPk9fFAtlprDExvmq-3" target="WdGRPk9fFAtlprDExvmq-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="550" as="sourcePoint" />
+            <mxPoint x="650" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-15" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.007;exitY=0.513;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="WdGRPk9fFAtlprDExvmq-2" target="WdGRPk9fFAtlprDExvmq-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="490" as="sourcePoint" />
+            <mxPoint x="840" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-16" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.507;entryY=0.981;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="WdGRPk9fFAtlprDExvmq-4" target="WdGRPk9fFAtlprDExvmq-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="890" y="380" as="sourcePoint" />
+            <mxPoint x="960" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-17" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.069;entryY=0.492;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="WdGRPk9fFAtlprDExvmq-4" target="WdGRPk9fFAtlprDExvmq-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1180" y="410" as="sourcePoint" />
+            <mxPoint x="1230" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-18" value="IBC Protocol" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WdGRPk9fFAtlprDExvmq-17">
+          <mxGeometry x="0.0522" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-19" value="TSS Server" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="540" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WdGRPk9fFAtlprDExvmq-20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.492;entryY=0.013;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.508;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="WdGRPk9fFAtlprDExvmq-2" target="WdGRPk9fFAtlprDExvmq-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="610" as="sourcePoint" />
+            <mxPoint x="690" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

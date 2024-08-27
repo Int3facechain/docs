@@ -1,0 +1,35 @@
+@startuml
+!define RECTANGLE class
+
+RECTANGLE FrontendUIApp {
+  - Displays data
+  - User interface
+}
+
+RECTANGLE PostgresSQLDB {
+  - Cache to improve performance
+  - Stores data fetched by BDJuno
+}
+
+RECTANGLE BDJuno {
+  - Middleware
+  - Fetches data from the full-node
+  - Stores data in the DB
+}
+
+RECTANGLE Hasura {
+  - GraphQL API
+  - Serves data to the frontend
+}
+
+RECTANGLE FullNode {
+  - Full blockchain node
+  - Provides data to BDJuno
+}
+
+FrontendUIApp --> Hasura: Queries
+Hasura --> PostgresSQLDB: Retrieves data
+BDJuno --> PostgresSQLDB: Stores data
+BDJuno --> FullNode: Fetches data
+
+@enduml

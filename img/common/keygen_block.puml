@@ -1,0 +1,41 @@
+@startuml
+
+autoactivate on
+
+participant "Observer 1" as observer1
+participant "TSS server" as server
+participant "Int3face" as int3face
+participant "Observer 2" as observer2
+
+observer1 -> int3face : request block info
+observer1 <-- int3face : block containing keygen request
+
+observer2 -> int3face : request block info
+observer2 <-- int3face : block containing keygen request
+
+note over observer1, observer2
+    Observers stop accepting new transfers and finish processing the internal queue
+end note
+
+observer1 -> server : list all online peers request
+
+observer1 <-- server : **online peers**
+
+observer2 -> server : list all online peers request
+
+observer2 <-- server : **online peers**
+
+observer1 -> server : join party request
+observer2 -> server : join party request
+note over observer1, observer2
+    Request contains all the **online peers**. This request starts blocking operation waiting
+    for all listed peers to join. Once all of them are joined, the response is generated.
+
+    Response contains a new **pool public key** based on the list of the new peers.
+end note
+
+
+observer2 <-- server : **pool public key**
+observer1 <-- server : **pool public key**
+
+@enduml

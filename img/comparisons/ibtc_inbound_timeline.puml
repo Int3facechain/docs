@@ -1,0 +1,14 @@
+@startuml "ibtc_inbound_timeline"
+
+== iBTC Inbound Timeline ==
+
+participant "User" as user
+participant "BTC Vault" as btc_vault
+participant "Observer" as observer
+participant "Int3face" as int3
+
+user --> btc_vault : Deposits tokens
+btc_vault --> observer : ~60 minutes (awaits confirmations)
+observer --> int3 : ~6 seconds (awaits for the block, confirmation instant, mint tokens)
+
+@enduml

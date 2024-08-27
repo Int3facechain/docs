@@ -1,0 +1,60 @@
+@startuml utxo_observer_flow
+start
+
+:Observer wake ups from the timeout;
+
+while (Next block available?)
+
+    :Get block hash for the next height;
+
+    if (Successful?) then (yes)
+    else (no)
+        break
+    endif
+
+    :Get verbose block data by block hash;
+
+    if (Successful?) then (yes)
+    else (no)
+        break
+    endif
+
+    if (Reorganisation detected?) then (yes)
+        #LightYellow:Process reorganisation;
+    else (no)
+    endif
+
+    :Start processing transactions in the block;
+
+    while (More transactions in the block?) is (yes)
+
+        if (Transaction directed to our vault?) then (yes)
+        else (no)
+            #LightYellow:Go to the next transaction;
+            kill
+        endif
+
+        if (Retrieved amount of tokens?) then (yes)
+        else (no)
+            #LightYellow:Go to the next transaction;
+            kill
+        endif
+
+        if (Retrieved transaction memo?) then (yes)
+        else (no)
+            #LightYellow:Go to the next transaction;
+            kill
+        endif
+
+        #PaleGreen:Signal **observer** abount new outbound transfer;
+
+    endwhile (no)
+
+    :Update block history;
+
+endwhile (no)
+
+:Go to sleep until timeout;
+
+end
+@enduml

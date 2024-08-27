@@ -1,0 +1,27 @@
+@startuml int3face_observer_flow
+start
+
+:Scanner subscribes to the `NewBlock` events;
+
+:Wait for the next block;
+
+while (Next transaction in block?) is (yes)
+
+    if (Decoded transaction with TxDecoder?) then (yes)
+    else (no)
+        #LightYellow:Go to the next transaction;
+        kill
+    endif
+
+    if (Transaction contains `MsgOutboundTransfer` message) then (yes)
+    else (no)
+        #LightYellow:Go to the next transaction;
+        kill
+    endif
+
+    #PaleGreen:Signal **observer** about new outbound transfer;
+
+endwhile (no)
+
+:Wait for the next block;
+@enduml

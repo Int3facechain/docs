@@ -1,0 +1,40 @@
+@startuml observer_int3face_outbound
+cloud "Bitcoin" as btc
+cloud "Ethereum" as eth
+cloud "Int3face" as int3
+
+node "Bitcoin Chain Client" as btcClient
+node "Ethereum Chain Client" as ethClient
+node "Int3face Chain Client" as int3Client
+
+artifact "BTC Outbound Transfer" as btcOut
+artifact "ETH Outbound Transfer" as ethOut
+artifact "BTC Inbound Transfer" as btcIn
+artifact "ETH Inbound Transfer" as ethIn
+
+folder "Observer" as observer {
+    node "Queue" as queue
+    action "Process queue" as process
+    action "Check if confirmed" as confirm
+}
+
+int3Client -u-> int3: "Observed **MsgOutboundTransfer**"
+
+int3Client -d-> btcOut
+int3Client -d-> ethOut
+
+btcOut -d-> queue
+ethOut -d-> queue
+
+queue -d-> process
+process -d-> confirm: For each item in queue
+confirm -d-> btcIn #green: Confirmed
+confirm -d-> ethIn #green: Confirmed
+confirm --> queue #red: Not confirmed
+
+btcIn -d-> btcClient: Signals inbound transfer
+ethIn -d-> ethClient: Signals inbound transfer
+
+btcClient -d-> btc: Release tokens
+ethClient -d-> eth: Release tokens
+@enduml

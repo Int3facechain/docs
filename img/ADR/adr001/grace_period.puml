@@ -1,0 +1,14 @@
+@startuml
+concise "Transfer" as S
+
+S is "Transfer submission"
+
+@10:20:00
+S is "Execution period"
+
+@12:20:00
+S is "Graceful period"
+
+@14:20:00
+
+@enduml

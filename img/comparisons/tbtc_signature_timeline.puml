@@ -1,0 +1,21 @@
+@startuml "tbtc_signature_timeline"
+
+== tBTC Signature Timeline ==
+
+participant "Protocol action\ndeposit\nsweep\nwithdrawal" as protocol_action
+participant "Signers readiness" as signers_readiness
+participant "Signature production" as signature_production
+participant "Cooldown" as cooldown
+participant "Retry" as retry
+
+protocol_action --> signers_readiness : ~1.2 minutes (6 ETH blocks)
+signers_readiness --> signature_production : <= 6 minutes (<= 30 ETH blocks)
+signature_production --> cooldown : ~1 minute (5 ETH blocks)
+
+alt failure
+    signers_readiness --> retry : Can be started right after the current signing window is finished
+    signature_production --> retry
+    cooldown --> retry
+end
+
+@enduml

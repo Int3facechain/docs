@@ -1,0 +1,46 @@
+@startuml "zetachain_success"
+
+title "Successful Contract Call"
+
+== Chain A -> Chain B ==
+
+participant "Chain A" as chainA
+participant "ZetaClient 1" as zetaclient1
+participant "ZetaChain" as zeta
+participant "ZetaClient 2" as zetaclient2
+participant "Chain B" as chainB
+
+-> chainA : Call the contract
+
+chainA <- chainA : Generate some\nmethod call event
+
+chainA <- zetaclient1: Witness\nthe call event
+
+zetaclient1 -> zeta: Submit the call
+
+zeta -> zetaclient2: Sign the call
+
+zetaclient2 -> chainB #red: Trigger execution\nof the call
+
+chainB -> chainB : Process the call
+
+zetaclient2 -> chainB : Witness\nthe confirmation
+
+zetaclient2 -> zeta : Confirmation
+
+note over zeta #lightgreen
+    TX status **Confirmed**
+end note
+
+== Chain B Execution Result ==
+
+zetaclient2 -> chainB : Witness the\nexecution event
+
+zetaclient2 -> zeta : Submit the result
+
+note over zeta #lightgreen
+    TX status **OutboundMined**
+end note
+
+
+@enduml

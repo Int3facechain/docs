@@ -1,0 +1,47 @@
+@startuml observer
+
+left to right direction
+
+legend right
+|= Color  |= Transfer |
+|<#green> | Outbound  |
+|<#blue>  | Inbound   |
+endlegend
+
+node "Bitcoin" as bitcoin
+node "Int3face" as int3face
+node "Ethereum" as eth
+
+folder "Observer" as observer {
+  folder "Bitcoin" as bitcoin_observer {
+    component "Client" as bitcoin_chain_client
+    component "Observer" as bitcoin_observer_1
+  }
+
+  folder "Ethereum" as eth_observer {
+      component "Client" as eth_chain_client
+      component "Observer" as eth_observer_1
+    }
+
+  folder "Int3face" as int3face_observer {
+    component "Client" as int3face_chain_client
+    component "Observer" as int3face_observer_1
+  }
+}
+
+bitcoin -d-> bitcoin_observer_1 #blue : inbound transfer
+bitcoin_observer_1 --d-> int3face_chain_client #blue
+
+int3face_observer_1 --u-> bitcoin_chain_client #green
+bitcoin_chain_client -u-> bitcoin #green : release coins
+
+eth -d-> eth_observer_1 #blue : inbound transfer
+eth_observer_1 --d-> int3face_chain_client #blue
+
+int3face_observer_1 --u-> eth_chain_client #green
+eth_chain_client -u-> eth #green : release coins
+
+int3face_chain_client -d-> int3face #blue : **MsgInboundTransfer**
+int3face -u-> int3face_observer_1 #green : **EventOutboundTransfer**
+
+@enduml

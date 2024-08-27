@@ -1,0 +1,96 @@
+@startuml utxo_inbound
+
+<style>
+action {
+    BackgroundColor lightcyan
+}
+</style>
+
+actor "Sender" as sender
+actor "Recipient" as recipient
+
+cloud "Bitcoin" as btc
+cloud "Litecoin" as ltc
+cloud "Dogecoin" as doge
+cloud "Bitcoin Cash" as bch
+cloud "Int3face" as int3
+
+node "BTC Chain Client" as btc_client
+node "LTC Chain Client" as ltc_client
+node "DOGE Chain Client" as doge_client
+node "BCH Chain Client" as bch_client
+node "Int3face Chain Client" as int3_client
+
+artifact "BTC Outbound Transfer" as btc_out
+artifact "LTC Outbound Transfer" as ltc_out
+artifact "DOGE Outbound Transfer" as doge_out
+artifact "BCH Outbound Transfer" as bch_out
+artifact "BTC Inbound Transfer" as btc_in
+artifact "LTC Inbound Transfer" as ltc_in
+artifact "DOGE Inbound Transfer" as doge_in
+artifact "BCH Inbound Transfer" as bch_in
+
+folder "Observer" as observer {
+    node "Queue" as inbound_queue
+    action "Process queue" as process
+    action "Check if confirmed" as confirm
+}
+
+action "Sends tokens to the vault with the recipient encoded in Memo" as user_send
+action "Observes Tx" as btc_observe
+action "Observes Tx" as ltc_observe
+action "Observes Tx" as doge_observe
+action "Observes Tx" as bch_observe
+action "Extracts amount and\nrecipient from Tx" as btc_extract
+action "Extracts amount and\nrecipient from Tx" as ltc_extract
+action "Extracts amount and\nrecipient from Tx" as doge_extract
+action "Extracts amount and\nrecipient from Tx" as bch_extract
+action "Mints corresponding token for the recipient" as mint
+
+sender -d-> user_send
+user_send -d-> btc
+user_send -d-> ltc
+user_send -d-> doge
+user_send -d-> bch
+
+btc_observe -u-> btc
+ltc_observe -u-> ltc
+doge_observe -u-> doge
+bch_observe -u-> bch
+btc_client -u-> btc_observe
+ltc_client -u-> ltc_observe
+doge_client -u-> doge_observe
+bch_client -u-> bch_observe
+
+btc_client -d-> btc_extract
+ltc_client -d-> ltc_extract
+doge_client -d-> doge_extract
+bch_client -d-> bch_extract
+btc_extract -d-> btc_out
+ltc_extract -d-> ltc_out
+doge_extract -d-> doge_out
+bch_extract -d-> bch_out
+
+btc_out -d-> inbound_queue
+ltc_out -d-> inbound_queue
+doge_out -d-> inbound_queue
+bch_out -d-> inbound_queue
+
+inbound_queue -d-> process
+process -d-> confirm: For each item in queue
+confirm -d-> btc_in #green: Confirmed
+confirm -d-> ltc_in #green
+confirm -d-> doge_in #green
+confirm -d-> bch_in #green
+confirm --> inbound_queue #red: Not confirmed\nPut back into the queue
+
+btc_in -d-> int3_client: Signals inbound transfer
+ltc_in -d-> int3_client
+doge_in -d-> int3_client
+bch_in -d-> int3_client
+
+int3_client -d-> int3: Broadcast **MsgInboundTransfer**
+
+int3 -d-> mint
+mint -d-> recipient
+@enduml

@@ -1,0 +1,57 @@
+@startuml
+
+actor "Client" as client
+
+folder "Bitcoin" as btc {
+    component "BTC vault" as vault
+
+    client --> vault : send BTC token
+}
+
+folder "Valset" as valset1 {
+    folder "Validator 1" as val1 {
+        node "BTC Client" as btc_1
+        cloud "Observer" as obs_1
+        node "Int3face Client" as int3_1
+
+        obs_1 <-u- btc_1 : signal transfer
+        obs_1 -d-> int3_1 : signal transfer
+    }
+
+    folder "Validator 2" as val2 {
+        node "BTC Client" as btc_2
+        cloud "Observer" as obs_2
+        node "Int3face Client" as int3_2
+
+        obs_2 <-u- btc_2 : signal transfer
+        obs_2 -d-> int3_2 : signal transfer
+    }
+
+    folder "Validator 3" as val3 {
+        node "BTC Client" as btc_3
+        cloud "Observer" as obs_3
+        node "Int3face Client" as int3_3
+
+        obs_3 <-u- btc_3 : signal transfer
+        obs_3 -d-> int3_3 : signal transfer
+    }
+}
+
+vault <--> btc_1 : observe blocks
+vault <--> btc_2 : observe blocks
+vault <--> btc_3 : observe blocks
+
+folder "Int3face" as int3 {
+    component "x/bridge" as bridge
+    component "x/tokenfactory" as tf
+    component "Client Addr" as client_addr
+
+    bridge --> tf : mint
+    tf --> client_addr : tokens
+}
+
+int3_1 --> bridge : transfer
+int3_2 --> bridge : transfer
+int3_3 --> bridge : transfer
+
+@enduml

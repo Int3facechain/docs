@@ -1,0 +1,66 @@
+@startuml
+
+!pragma teoz true
+
+participant "Observer Disk" as disk
+participant "Queue 1" as queue1
+participant "Observer 1" as observer1
+participant "TSS Server" as tss
+participant "Int3face chain" as int3face
+participant "Vault" as vault
+'participant "Observer 2" as observer2
+'queue "Queue 2" as queue2
+
+observer1 <- int3face : gen KeyGen block
+observer1 -> observer1 : halt observations
+observer1 -> queue1 : add KeyGen
+observer1 <- queue1 : process the queue\nuntil Keygen
+
+observer1 -> tss : list online peers
+activate tss
+
+observer1 <-- tss : online peers
+deactivate tss
+
+{join_req} observer1 -> tss : keygen listing\nall the online peers
+activate tss
+
+note over tss
+    Long operation
+    of waiting for
+    another peers
+    and generating
+    a new pubkey
+end note
+
+{join_resp} observer1 <-- tss : pool public key
+deactivate tss
+
+observer1 -> disk : save new pool public key
+observer1 -> observer1 : build a vault\nmigration tx
+observer1 <- disk : get old pool public key
+
+observer1 -> tss : keysign using\nthe pool public key
+activate tss
+
+note over tss
+    Long operation
+    of waiting for
+    another peers
+    and signing
+    the tx
+end note
+
+observer1 <-- tss : result
+deactivate tss
+
+observer1 -> vault : broadcast the migration tx
+
+observer1 -> observer1 : stop the halt and\ncontinue observations
+
+'observer2 <- int3face : gen KeyGen block
+'observer2 <- observer2 : halts observations
+'observer2 -> queue2 : adds KeyGen
+'observer2 <- queue2 : process the queue\nuntil Keygen
+
+@enduml
