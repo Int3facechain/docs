@@ -8,9 +8,9 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Neutron Docs",
-  tagline: "Neutron",
-  url: "http://docs.neutron.org",
+  title: "Int3face Docs",
+  tagline: "Int3face",
+  url: "http://docs.int3face.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "neutron-org", // Usually your GitHub org/user name.
-  projectName: "neutron-docs", // Usually your repo name.
+  organizationName: "Int3facechain", // Usually your GitHub org/user name.
+  projectName: "int3face-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
   // Even if you don't use internalization, you can use this field to set useful
