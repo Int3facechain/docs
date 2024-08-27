@@ -31,16 +31,6 @@ const sidebars = {
           ],
         },
         {
-          label: "Neutron DAO",
-          type: "category",
-          items: [
-            "int3face/dao/overview",
-            "int3face/dao/overrules",
-            "int3face/dao/dao-dao-diff",
-            "int3face/dao/params",
-          ],
-        },
-        {
           label: "Tokenomics",
           type: "category",
           items: [
