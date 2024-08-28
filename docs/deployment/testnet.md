@@ -1,4 +1,4 @@
-# Setting up an Int3face validator
+# Become an Int3face validator
 
 ## Hardware
 

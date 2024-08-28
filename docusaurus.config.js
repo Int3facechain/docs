@@ -37,14 +37,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "/", // Serve the docs at the site's root
+          routeBasePath: "/docs", // Serve the docs at the site's root
           remarkPlugins: [math],
           rehypePlugins: [katex],
           lastVersion: "current",
           versions: {
             current: {
               label: "1.0",
-              path: "/",
+              path: "/docs",
             },
           },
         },

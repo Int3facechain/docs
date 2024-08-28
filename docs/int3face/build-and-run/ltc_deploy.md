@@ -1,4 +1,4 @@
-# Deployment
+# LTC Regtest
 
 ## Regtest
 

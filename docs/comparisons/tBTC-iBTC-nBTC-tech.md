@@ -1,3 +1,5 @@
+# tBTC & nBTC: Technical
+
 # tBTC Main Components Diagram
 
 ![1](/img/comparisons/tbtc_components.png)

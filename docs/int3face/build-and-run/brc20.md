@@ -1,4 +1,4 @@
-# Regtest Demo
+# BRC20 Regtest
 
 Instruction on how to setup Bitcoin Regtest node alongside Ordinals node, and how to perform brc-20 tx inscription and execution.
 

@@ -1,4 +1,4 @@
-# Comparison
+# THORChain & ZetaChain
 
 ## ZetaChain
 

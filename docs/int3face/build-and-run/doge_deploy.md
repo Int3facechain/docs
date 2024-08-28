@@ -1,4 +1,6 @@
-# Testnet
+# DOGE Regtest 
+
+## Testnet
 
 1. Download the binaries, extract to the bin folder
 
@@ -64,7 +66,7 @@ You should see a response like this:
 }
 ```
 
-# Regtest
+## Regtest
 
 Alternative way is to create our own `regtest` network.
 

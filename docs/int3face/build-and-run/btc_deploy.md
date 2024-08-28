@@ -1,4 +1,4 @@
-# Deployment
+# BTC Regtest
 
 ## Regtest
 

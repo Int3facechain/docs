@@ -1,4 +1,4 @@
-# Deployment
+# BCH Regtest
 
 ## Regtest
 
