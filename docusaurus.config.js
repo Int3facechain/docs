@@ -37,14 +37,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "/docs", // Serve the docs at the site's root
+          routeBasePath: "/", // Serve the docs at the site's root
           remarkPlugins: [math],
           rehypePlugins: [katex],
           lastVersion: "current",
           versions: {
             current: {
               label: "1.0",
-              path: "/docs",
+              path: "/",
             },
           },
         },
@@ -76,7 +76,7 @@ const config = {
         title: "Int3face",
         logo: {
           alt: "Int3face Logo",
-          src: "img/logo.jpeg",
+          src: "img/logo.jpg",
         },
         items: [
           {

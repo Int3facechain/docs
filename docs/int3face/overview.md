@@ -1,5 +1,7 @@
 # Bridge
 
+![banner](/img/banner.jpg)
+
 ## Abstract
 
 This README provides a detailed outline of the bridging mechanism implementation, which facilitates cross-chain asset transfers between Int3face and various external chains. The mechanism aims to integrate Int3face with other blockchains, beginning with the BTC network. The primary objective is to enable decentralized cross-chain asset transfers, seamlessly connecting Int3face with other blockchain ecosystems.
