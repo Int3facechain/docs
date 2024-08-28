@@ -1,4 +1,4 @@
-# ADR-010: Rate Limiting
+# ADR-013: Rate Limiting
 
 ## Status
 
