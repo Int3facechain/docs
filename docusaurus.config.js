@@ -120,6 +120,10 @@ const config = {
                 label: "Twitter",
                 href: "https://twitter.com/_Bitfrost",
               },
+              {
+                label: "Website",
+                href: "https://www.int3face.io",
+              },
             ],
           },
           {
