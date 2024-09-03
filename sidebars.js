@@ -120,7 +120,8 @@ const sidebars = {
         "ADR/adr-010-node-ungrades",
         "ADR/adr-011-superfluid-staking",
         "ADR/adr-012-ton-integration",
-        "ADR/adr-013-rate-limiting"
+        "ADR/adr-013-rate-limiting",
+        "ADR/adr-014-babylon-finality"
       ],
     },
   ],
