@@ -102,7 +102,8 @@ const sidebars = {
       items: [
         "demos/btc/btc_inbound_outbound",
         "demos/doge/doge_inbound_outbound",
-        "demos/ton/ton_inbound_outbound"
+        "demos/ton/ton_inbound_outbound",
+        "demos/mainnet/transfers/doge-transfers-example"
       ],
     },
     {
