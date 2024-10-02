@@ -1,4 +1,4 @@
-# Inbound Transfer Using Frontend UI
+# Transfers With Frontend UI
 
 ## Preconditions:
 - XDEFI wallet browser extension is installed.
