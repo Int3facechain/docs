@@ -12,17 +12,17 @@
 2. **Select Currency**  
    Choose the currency you want to transfer.
 
-   <img alt="img.png" height="300" src="/img/demos/mainnet/transfers/select-currency.png" width="330"/>
+   ![img.png](/img/demos/mainnet/transfers/select-currency.png)
 
 3. **Connect with XDEFI**  
    Click the "Connect with XDEFI" button.
 
-   <img alt="img.png" height="300" src="/img/demos/mainnet/transfers/connect-with-xdefi.png" width="330"/>
+   ![img.png](/img/demos/mainnet/transfers/connect-with-xdefi.png)
 
 4. **XDEFI Wallet Connected**  
    Your XDEFI wallet is now connected.
 
-   <img alt="img.png" height="300" src="/img/demos/mainnet/transfers/xdefi-wallet-connected.png" width="430"/>
+   ![img.png](/img/demos/mainnet/transfers/xdefi-wallet-connected.png)
 
 5. **Input Transfer Details**  
    Now you can send DOGE tokens from your address. The following fields should be filled:
@@ -33,22 +33,22 @@
 6. **Submit the Transfer**  
    Fill out the fields and click the 'Transfer' button.
 
-   <img alt="img.png" height="300" src="/img/demos/mainnet/transfers/fill-out-and-transfer.png" width="330"/>
+   ![img.png](/img/demos/mainnet/transfers/fill-out-and-transfer.png)
 
 7. **Approve the Transfer**  
    XDEFI wallet will show a confirmation window. Click 'Approve'.
 
-   <img alt="img.png" height="370" src="/img/demos/mainnet/transfers/approve-transfer.png" width="630"/>
+   ![img.png](/img/demos/mainnet/transfers/approve-transfer.png)
 
 8. **Check Transaction Status**  
    Open the 'Activity' tab in XDEFI wallet to monitor the transaction. Ensure the correct chain is selected.
 
-   <img alt="img.png" height="300" src="/img/demos/mainnet/transfers/xdefi-wallet-activity.png" width="200"/>
+   ![img.png](/img/demos/mainnet/transfers/xdefi-wallet-activity.png)
 
 9. **Verify on Explorer**  
    Visit the Int3face Ping.Pub Explorer to verify your transaction. You can check your int3face address and see the transaction history [here](http://95.217.153.1/explorer/int3face-1/account/{your_int3face_address}).
 
-   <img alt="img.png" height="80" src="/img/demos/mainnet/transfers/explorer-inbound-transfers.png" width="1550"/>
+   ![img.png](/img/demos/mainnet/transfers/explorer-inbound-transfers.png)
 
 ---
 
@@ -95,7 +95,7 @@
 
    Tx execution result:
 
-   <img alt="img.png" height="200" src="/img/demos/mainnet/transfers/outbound-tx-submitted.png" width="1000"/>
+   ![img.png](/img/demos/mainnet/transfers/outbound-tx-submitted.png)
 
 4. **Check the Transaction Status**
 
@@ -168,4 +168,4 @@
    
    Navigate to the 'Transactions' tab to see the transaction details.
 
-   <img alt="img.png" height="650" src="/img/demos/mainnet/transfers/mintscan-ibc-transactions.png" width="1000"/>
+   ![img.png](/img/demos/mainnet/transfers/mintscan-ibc-transactions.png)
