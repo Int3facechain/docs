@@ -94,7 +94,7 @@ const sidebars = {
     {
       label: "Deployments",
       type: "category",
-      items: ["deployment/testnet"],
+      items: ["deployment/mainnet", "deployment/testnet"],
     },
     {
       label: "Demos",
