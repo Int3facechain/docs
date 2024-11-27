@@ -1,0 +1,79 @@
+---
+title: "DOGE Regtest"
+---
+
+* Int3face
+* Build and run
+* DOGE Regtest
+
+On this page
+
+## Testnet[​](#testnet "Direct link to Testnet")
+
+1. Download the binaries, extract to the bin folder
+
+```
+wget https://github.com/dogecoin/dogecoin/releases/download/v1.14.7/dogecoin-1.14.7-x86_64-linux-gnu.tar.gztar -xzvf dogecoin-1.14.7-x86_64-linux-gnu.tar.gzmv dogecoin-1.14.7/bin/* ~/bin/# We can remove theserm -rf dogecoin-1.14.7 dogecoin-1.14.7-x86_64-linux-gnu.tar.gz
+```
+
+2. Create home dir for dogecoin
+
+```
+mkdir ~/.dogecoin
+```
+
+3. Initialize configuration, set your own `rpcuser` and `rpcpassword`
+
+```
+echo 'daemon=1server=1testnet=1listen=1rpcconnect=127.0.0.1rpcuser=dogecoinrpcrpcpassword=CCwXB6IxXcYMlBd6w812yfmiahxYBnlR0KLlvMIjgOrGq9eqgj9WmdeTCSDVo4w9paytxfee=0.01' > ~/.dogecoin/dogecoin.conf
+```
+
+4. Start the node
+
+```
+dogecoind
+```
+
+5. Verify the node is started
+
+```
+dogecoin-cli getinfo
+```
+
+You should see a response like this:
+
+```
+{  "version": 1140700,  "protocolversion": 70015,  "walletversion": 130000,  "balance": 0.00000000,  "blocks": 55054,  "timeoffset": 0,  "connections": 8,  "proxy": "",  "difficulty": 0.0005981929943754981,  "testnet": true,  "keypoololdest": 1715596527,  "keypoolsize": 100,  "paytxfee": 0.01000000,  "relayfee": 0.00100000,  "errors": ""}
+```
+
+## Regtest[​](#regtest "Direct link to Regtest")
+
+Alternative way is to create our own `regtest` network.
+
+Everything is the same, but we should set different `dogecoin.conf` configuration:
+
+```
+daemon=1server=1regtest=1listen=1rpcconnect=127.0.0.1rpcuser=dogecoinrpcrpcpassword=CCwXB6IxXcYMlBd6w812yfmiahxYBnlR0KLlvMIjgOrGq9eqgj9WmdeTCSDVo4w9paytxfee=0.01addnode=...addnode=...
+```
+
+Define addresses of all other nodes in `addnode` field. Default P2P port for regtest is `18444`.
+
+1. Mine first blocks
+
+```
+dogecoin-cli generate 110[  "ad3c340e804e0b08af4b3302613b8f8f02ad7b4ea1cb2267e296868ee9705027",  ...]
+```
+
+2. Verify blocks are mined
+
+```
+dogecoin-cli getblockcount110
+```
+
+You can do the same on the other nodes, to verify P2P connection.
+
+3. Check the balance on our node
+
+```
+dogecoin-cli getbalance35000000.00000000
+```

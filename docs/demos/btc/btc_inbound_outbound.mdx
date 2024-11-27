@@ -1,0 +1,146 @@
+---
+title: "BTC Demo"
+---
+
+* Demos
+* BTC Demo
+
+On this page
+
+This is the demo for the inbound and outbound transfer flow in the Int3face for BTC tokens.
+
+**Requirements**
+
+1. Int3face node
+2. Int3face observer (configured for the BTC regtest)
+3. [BTC regtest node](/docs/int3face/build-and-run/btc_deploy)
+
+We have everything deployed and ready in the Int3face testnet. Request Int3face team to get access to the testnet environment.
+
+Current Bitcoin vault address: `bcrt1qjrcwv9848uvvcdzvyplmgms6dr62zp6qz5f5ch`
+
+## Inbound Transfer[​](#inbound-transfer "Direct link to Inbound Transfer")
+
+We will use our own BTC validator funds.
+
+1. We need an int3 address to send funds to
+
+We can generate new address by `int3faced keys add "$your_key_name"`. ![new\_key](/docs/assets/images/new_key-5dc20bffc1ac37f497a9e042dcbefbdc.png)
+
+We will use the address `int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt`
+
+2. Lets verify that this address doesn't have DOGE tokens in the Int3face
+
+```
+int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
+```
+
+![init\_balance](/docs/assets/images/init_balance-63784666a53f85b0174405c4d696fc14.png)
+
+3. Select an UTXO to spend
+
+```
+bitcoin-cli listunspent
+```
+
+![list\_unspent](/docs/assets/images/list_unspent-54d25f3f9ea811b3ecd355e5db408674.png)
+
+If you don't see any UTXO available, mine a block to receive the rewards `bitcoin-cli -generate 1`, and run `listunspent` command again.
+
+4. Build raw transaction from the UTXO you selected
+
+**Vins**
+
+* Take the `txid` and `vout` from the UTXO you're going to spend
+
+**Vouts**
+
+* Add the DOGE vault address and the amount to send
+* Add the change address to get remaining tokens back (to get address of your current node run `bitcoin-cli listreceivedbyaddress 0 true`)
+* Leave a small amount of tokens to pay the fee (0.1 should be enough)
+* Add `data` entry with the hex encoded recipient address
+  * Encode `int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt` at the (online converter)\[https\://www\.rapidtables.com/convert/number/ascii-to-hex.html]
+
+```
+vins='[    {        "txid": "5023f0be5c236ac4c1be6a6c7bcc5dcc2ece77f5ccf1cb52cd590e5c4c1407d9",        "vout": 0    }]'vouts='{    "bcrt1qjrcwv9848uvvcdzvyplmgms6dr62zp6qz5f5ch": 10.0,    "bcrt1qkx2l45vnq5d4883n0ny9fhdcqqz79cqsva44q6": 39.99,    "data": "696E7433316E783732777165396A73396E3074766B39633277347A77677776366B656370306E347A6C6C74"}'bitcoin-cli createrawtransaction "$vins" "$vouts"
+```
+
+![raw\_transaction](/docs/assets/images/raw_transaction-7e551962643aa32f059b0d3f2adc4cbf.png)
+
+5. We can verify that the transaction is correct
+
+```
+bitcoin-tx -regtest -json "$raw_tx"
+```
+
+![decoded\_raw\_transaction](/docs/assets/images/decoded_raw_transaction-6a1877ad024919d661ecaa72feaf9b94.png)
+
+6. Sign the transaction
+
+```
+bitcoin-cli signrawtransactionwithwallet $raw_tx
+```
+
+![signed\_tx](/docs/assets/images/signed_tx-cc4dc40f879527aef5db1f95f3d54bf0.png)
+
+7. Broadcast signed transaction to the BTC
+
+```
+bitcoin-cli sendrawtransaction $signed_tx
+```
+
+![send\_btc\_transaction](/docs/assets/images/send_btc_transaction-06f905148223cf7919a0be7ce0e15f4f.png)
+
+8. Generate a block to include our transaction in the chain
+
+```
+bitcoin-cli -generate 1
+```
+
+Now the transaction should be observed by the Observer and sent to the Int3face chain.
+
+9. Check your balance on the Int3face chain.
+
+```
+int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
+```
+
+![inbound\_balance](/docs/assets/images/inbound_balance-0c5b8dd0126a9286d47432a2f7eddf53.png) Now, we can see BTC tokens in our wallet.
+
+## Outbound Transfer[​](#outbound-transfer "Direct link to Outbound Transfer")
+
+Lets send some of the tokens back from Int3face to BTC.
+
+1. Generate new BTC address
+
+```
+bitcoin-cli getnewaddressbcrt1qu80e2kt8ery9589gec9em8qhzkvxqkdy8ecr6x
+```
+
+2. Request an outbound transfer from the bridge module
+
+```
+int3faced tx bridge outbound-transfer bcrt1qu80e2kt8ery9589gec9em8qhzkvxqkdy8ecr6x bitcoin-btc 100000000 --from doge_test
+```
+
+![outbound\_transaction](/docs/assets/images/outbound_transaction-0c7e7917b9ac2d75774980208630f016.png)
+
+3. We can check our balance again to see that DOGE tokens in Int3face were burt
+
+```
+int3faced q bank balances int31nx72wqe9js9n0tvk9c2w4zwgwv6kecp0n4zllt
+```
+
+4. Generate a block in BTC to include transaction from the vault
+
+```
+bitcoin-cli -generate 1
+```
+
+5. Check DOGE balance of the address we created before
+
+```
+bitcoin-cli listunspent 1 9999999 '["bcrt1qu80e2kt8ery9589gec9em8qhzkvxqkdy8ecr6x"]'
+```
+
+![outbound\_btc\_balance](/docs/assets/images/outbound_btc_balance-85ffc11aaaf04556814ba84210119e6e.png) Now, we can see BTC tokens in our wallet.

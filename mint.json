@@ -1,0 +1,240 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Int3face Docs",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#55D799",
+    "dark": "#0D9373"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": [
+    {
+      "group": "Overview",
+      "pages": [
+        "docs/int3face/overview"
+      ]
+    },
+    {
+      "group": "Bch Deploy",
+      "pages": [
+        "docs/int3face/build-and-run/bch_deploy"
+      ]
+    },
+    {
+      "group": "Brc20",
+      "pages": [
+        "docs/int3face/build-and-run/brc20"
+      ]
+    },
+    {
+      "group": "Btc Deploy",
+      "pages": [
+        "docs/int3face/build-and-run/btc_deploy"
+      ]
+    },
+    {
+      "group": "Doge Deploy",
+      "pages": [
+        "docs/int3face/build-and-run/doge_deploy"
+      ]
+    },
+    {
+      "group": "Ltc Deploy",
+      "pages": [
+        "docs/int3face/build-and-run/ltc_deploy"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "docs/int3face/tokenomics/overview"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "docs/int3face/modules/bridge/overview"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "docs/int3face/modules/ibcratelimit/overview"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "docs/int3face/modules/ratelimit/overview"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "docs/int3face/modules/quarantine/overview"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "docs/int3face/modules/tokenfactory/overview"
+      ]
+    },
+    {
+      "group": "Messages",
+      "pages": [
+        "docs/int3face/modules/tokenfactory/messages"
+      ]
+    },
+    {
+      "group": "Params",
+      "pages": [
+        "docs/int3face/modules/tokenfactory/params"
+      ]
+    },
+    {
+      "group": "Int3face THOR Zeta",
+      "pages": [
+        "docs/comparisons/Int3face-THOR-Zeta"
+      ]
+    },
+    {
+      "group": "TBTC IBTC NBTC",
+      "pages": [
+        "docs/comparisons/tBTC-iBTC-nBTC"
+      ]
+    },
+    {
+      "group": "TBTC IBTC NBTC Tech",
+      "pages": [
+        "docs/comparisons/tBTC-iBTC-nBTC-tech"
+      ]
+    },
+    {
+      "group": "Mainnet",
+      "pages": [
+        "docs/deployment/mainnet"
+      ]
+    },
+    {
+      "group": "Testnet",
+      "pages": [
+        "docs/deployment/testnet"
+      ]
+    },
+    {
+      "group": "Btc Inbound Outbound",
+      "pages": [
+        "docs/demos/btc/btc_inbound_outbound"
+      ]
+    },
+    {
+      "group": "Doge Inbound Outbound",
+      "pages": [
+        "docs/demos/doge/doge_inbound_outbound"
+      ]
+    },
+    {
+      "group": "Ton Inbound Outbound",
+      "pages": [
+        "docs/demos/ton/ton_inbound_outbound"
+      ]
+    },
+    {
+      "group": "Doge Transfers Example",
+      "pages": [
+        "docs/demos/mainnet/transfers/doge-transfers-example"
+      ]
+    },
+    {
+      "group": "Adr 001 Grace Period",
+      "pages": [
+        "docs/ADR/adr-001-grace-period"
+      ]
+    },
+    {
+      "group": "Adr 002 Dynamic Committee",
+      "pages": [
+        "docs/ADR/adr-002-dynamic-committee"
+      ]
+    },
+    {
+      "group": "Adr 003 Babylon",
+      "pages": [
+        "docs/ADR/adr-003-babylon"
+      ]
+    },
+    {
+      "group": "Adr 004 Solana Integration",
+      "pages": [
+        "docs/ADR/adr-004-solana-integration"
+      ]
+    },
+    {
+      "group": "Adr 005 Ordinals",
+      "pages": [
+        "docs/ADR/adr-005-ordinals"
+      ]
+    },
+    {
+      "group": "Adr 006 Metrics",
+      "pages": [
+        "docs/ADR/adr-006-metrics"
+      ]
+    },
+    {
+      "group": "Adr 007 E2e Tests",
+      "pages": [
+        "docs/ADR/adr-007-e2e-tests"
+      ]
+    },
+    {
+      "group": "Adr 008 Automatic Signer List",
+      "pages": [
+        "docs/ADR/adr-008-automatic-signer-list"
+      ]
+    },
+    {
+      "group": "Adr 009 Blockchain Explorer",
+      "pages": [
+        "docs/ADR/adr-009-blockchain-explorer"
+      ]
+    },
+    {
+      "group": "Adr 010 Node Ungrades",
+      "pages": [
+        "docs/ADR/adr-010-node-ungrades"
+      ]
+    },
+    {
+      "group": "Adr 011 Superfluid Staking",
+      "pages": [
+        "docs/ADR/adr-011-superfluid-staking"
+      ]
+    },
+    {
+      "group": "Adr 012 Ton Integration",
+      "pages": [
+        "docs/ADR/adr-012-ton-integration"
+      ]
+    },
+    {
+      "group": "Adr 013 Rate Limiting",
+      "pages": [
+        "docs/ADR/adr-013-rate-limiting"
+      ]
+    },
+    {
+      "group": "Adr 014 Babylon Finality",
+      "pages": [
+        "docs/ADR/adr-014-babylon-finality"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "name": "Introduction",
+      "url": "/docs/int3face/overview"
+    }
+  ]
+}

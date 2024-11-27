@@ -1,0 +1,47 @@
+---
+title: "BCH Regtest"
+---
+
+* Int3face
+* Build and run
+* BCH Regtest
+
+On this page
+
+## Regtest[​](#regtest "Direct link to Regtest")
+
+1. Download the binaries, extract to the bin folder
+
+Binaries' names intersect with the `bitcoin` names. So we are going to rename them.
+
+```
+wget https://github.com/bitcoin-cash-node/bitcoin-cash-node/releases/download/v27.1.0/bitcoin-cash-node-27.1.0-x86_64-linux-gnu.tar.gztar -xzvf bitcoin-cash-node-27.1.0-x86_64-linux-gnu.tar.gzmv bitcoin-cash-node-27.1.0/bin/bitcoind ~/bin/bcashdmv bitcoin-cash-node-27.1.0/bin/bitcoin-cli ~/bin/bcash-climv bitcoin-cash-node-27.1.0/bin/bitcoin-tx ~/bin/bcash-txrm -rf bitcoin-cash-node-27.1.0 bitcoin-cash-node-27.1.0-x86_64-linux-gnu.tar.gz
+```
+
+2. Create home dir for bitcoin-cash
+
+```
+mkdir ~/.bitcoin-cash
+```
+
+3. Initialize configuration file at `~/.bitcoin-cash/bitcoin-cash.conf`
+
+```
+regtest=1[regtest]daemon=1server=1listen=1port=18544rpcbind=127.0.0.1rpcport=18323rpcuser=bcashrpcrpcpassword=CCwXB6IxXcYMlBd6w812yfmiahxYBnlR0KLlvMIjgOrGq9eqgj9WmdeTCSDVo4w9datadir=...addnode=...addnode=...
+```
+
+Set your own `rpcuser`, `rpcpassword` and `datadir`, define addresses of all other nodes in `addnode` fields.
+
+4. Start the node
+
+We need to specify path ot config, because Bitcoin-Cash uses the same defaults as Bitcoin
+
+```
+bcashd -conf=$BCASH_HOME/bitcoin-cash.conf
+```
+
+5. Verify the node is working
+
+```
+bcash-cli -conf=$BCASH_HOME/bitcoin-cash.conf getblockcount
+```
