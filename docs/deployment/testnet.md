@@ -4,12 +4,17 @@
 
 We recommend selecting an all-purpose server with:
 
-* 4 or more physical (or 8 virtual) CPU cores
-* At least 500GB of SSD disk storage
-* At least 16GB of memory
-* At least 100mbps network bandwidth
+
+|**Parameter**|**Minimum**|**Recommended**|
+|---|---|---|
+|CPU|4 Cores|8 Cores|
+|RAM|16 GB|32 GB|
+|Storage|500 GB|1 TB|
+|Network |100mbps| 1gbps|
 
 The usage of the blockchain grows, plus it may be needed to bootstrap external chain nodes, so the server requirements may increase as well, so you should have a plan for updating your server as well.
+
+You can build the binary from source code or download it from the Release page.
 
 ## Prerequisites
 
@@ -21,12 +26,12 @@ This project requires Go version 1.22 or later. Install Go by following the inst
 
 Install the latest version of Golang
 ```shell
-wget https://go.dev/dl/go1.22.4.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.22.7.linux-amd64.tar.gz
 ```
 
 Remove any previous Go installation and install the new version
 ```shell
- rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.4.linux-amd64.tar.gz
+ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.7.linux-amd64.tar.gz
 ```
 
 Add `/usr/local/go/bin` to the `PATH` environment variable.
@@ -63,11 +68,11 @@ To install Int3face node, clone the repository to your local machine from Github
 git clone https://github.com/Int3facechain/bridge.git int3face-bridge
 ```
 
-Then, check out the last released version. Currently, it's `v0.2.7`.
+Then, check out the last released version. Currently, it's `v0.4.6`.
 
 ```bash
 cd int3face-bridge
-git checkout v0.2.7
+git checkout v0.4.6
 ```
 
 At the top-level directory of the project execute the following command, which will build and install the `int3faced` binary to `$GOPATH/bin`.
@@ -80,6 +85,23 @@ make install
 
 ```shell
 int3faced version --long
+```
+
+### Install from releases page
+Download `int3faced-linux-amd64.tar.gz` from Github Releases page. 
+(Optional)To verify file integrity and 
+```shell
+curl -s https://api.github.com/users/ZAlexanderV/ssh_signing_keys | \
+grep -o '"key": "[^"]*"' | \
+cut -d'"' -f4 | \
+sed 's/^/ZAlexanderV@github.com /' > allowed_signers
+ssh-keygen -Y verify -f allowed_signers -I "ZAlexanderV@github.com" -n file -s int3faced-linux-amd64.tar.gz.sig < int3faced-linux-amd64.tar.gz
+```
+
+Unpack and install binary
+```shell
+tar zxf int3faced-linux-amd64.tar.gz
+sudo install -g root -o root -m 755 int3faced-linux-amd64 /usr/bin
 ```
 
 ### Initialize node
@@ -313,6 +335,8 @@ wget https://raw.githubusercontent.com/Int3facechain/networks/main/int3-test-2/o
 ```
 
 Modify the config if it's needed. The most important thing is to ensure that the `keyring-folder` parameter is properly configured and points to your keyring. Note that in some Linux distributions, the observer binary fails to parse a tilde sign in the home-relative path. Therefore, if you receive an error saying that the keyring is not found, try changing the keyring path in `observer.toml` from, for example, `~/.intrfaced` to `/root/.intrfaced` (meaning avoid using `~`).
+
+
 
 ### Start the observer
 
