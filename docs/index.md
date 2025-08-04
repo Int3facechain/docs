@@ -6,6 +6,20 @@ sidebar_label: Home
 
 # Bitfrost Documentation
 
+<div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+  <img 
+    src="/img/banner.jpg" 
+    alt="Bitfrost Banner - The Bitcoin Bridge" 
+    style={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      height: 'auto',
+      borderRadius: '8px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+    }} 
+  />
+</div>
+
 Welcome to the Bitfrost documentation! This comprehensive guide covers everything you need to know about the Bitfrost ecosystem, which consists of two main protocols working together to provide cross-chain interoperability and liquidity solutions.
 
 ## What is Bitfrost?

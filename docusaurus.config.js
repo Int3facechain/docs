@@ -69,8 +69,8 @@ const config = {
         title: "Bitfrost Docs",
         logo: {
           alt: "Bitfrost Logo",
-          src: "img/logo.jpeg",
-          srcDark: "img/logo.jpeg",
+          src: "img/logo.png",
+          srcDark: "img/logo.png",
         },
         items: [
           {
