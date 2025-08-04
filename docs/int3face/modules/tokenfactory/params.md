@@ -1,4 +1,10 @@
-# Params
+---
+id: tokenfactory-params
+title: Token Factory Parameters
+sidebar_label: Parameters
+---
+
+# Token Factory Parameters
 
 The TokenFactory module uses params in this format:
 ```protobuf

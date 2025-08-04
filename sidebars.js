@@ -15,28 +15,28 @@
 const sidebars = {
   docs: [
     {
-      label: "Int3face",
+      label: "Introduction",
       type: "category",
       items: [
-        "int3face/overview",
-        {
-          label: "Build and run",
-          type: "category",
-          items: [
-            "int3face/build-and-run/bch_deploy",
-            "int3face/build-and-run/brc20",
-            "int3face/build-and-run/btc_deploy",
-            "int3face/build-and-run/doge_deploy",
-            "int3face/build-and-run/ltc_deploy",
-          ],
-        },
-        {
-          label: "Tokenomics",
-          type: "category",
-          items: [
-            "int3face/tokenomics/overview",
-          ],
-        },
+        "index",
+        "introduction/key-concepts",
+      ],
+    },
+    {
+      label: "Connected Chains",
+      type: "category",
+      items: [
+        "connected-chains/utxos",
+        "connected-chains/solana",
+        "connected-chains/ton",
+        "connected-chains/xrpl",
+      ],
+    },
+    {
+      label: "Int3face Protocol",
+      type: "category",
+      items: [
+        "int3face/int3face-overview",
         {
           label: "Modules",
           type: "category",
@@ -45,37 +45,30 @@ const sidebars = {
               label: "Bridge",
               type: "category",
               items: [
-                "int3face/modules/bridge/overview",
-              ],
-            },
-            {
-              label: "IBC Rate Limit",
-              type: "category",
-              items: [
-                "int3face/modules/ibcratelimit/overview",
+                "int3face/modules/bridge/bridge-overview",
               ],
             },
             {
               label: "Cross-chain Rate Limit",
               type: "category",
               items: [
-                "int3face/modules/ratelimit/overview",
+                "int3face/modules/ratelimit/ratelimit-overview",
               ],
             },
             {
               label: "Quarantine",
               type: "category",
               items: [
-                "int3face/modules/quarantine/overview",
+                "int3face/modules/quarantine/quarantine-overview",
               ],
             },
             {
               label: "Token Factory",
               type: "category",
               items: [
-                "int3face/modules/tokenfactory/overview",
-                "int3face/modules/tokenfactory/messages",
-                "int3face/modules/tokenfactory/params",
+                "int3face/modules/tokenfactory/tokenfactory-overview",
+                "int3face/modules/tokenfactory/tokenfactory-messages",
+                "int3face/modules/tokenfactory/tokenfactory-params",
               ],
             },
           ],
@@ -83,44 +76,74 @@ const sidebars = {
       ],
     },
     {
-      label: "Comparisons",
+      label: "Bitfrost Protocol",
       type: "category",
       items: [
-        "comparisons/Int3face-THOR-Zeta",
-        "comparisons/tBTC-iBTC-nBTC",
-        "comparisons/tBTC-iBTC-nBTC-tech"
+        "bitfrost/bitfrost-overview",
+        {
+          label: "Modules",
+          type: "category",
+          items: [
+            "bitfrost/modules/liquidity-layer",
+            "bitfrost/modules/liquid-staking",
+            "bitfrost/modules/ai-agents",
+          ],
+        },
       ],
     },
     {
-      label: "Deployments",
-      type: "category",
-      items: ["deployment/testnet"],
-    },
-    {
-      label: "Demos",
+      label: "Guides",
       type: "category",
       items: [
-        "demos/btc/btc_inbound_outbound",
-        "demos/doge/doge_inbound_outbound"
+        "guides/running-validator",
+        "guides/running-observer",
+        "guides/sending-transfers",
+                  {
+            label: "Demos",
+            type: "category",
+            items: [
+              "guides/demos/btc-demo",
+              "guides/demos/doge-demo"
+            ],
+          },
       ],
     },
     {
-      label: "ADR",
+      label: "Resources",
       type: "category",
       items: [
-        "ADR/adr-001-grace-period",
-        "ADR/adr-002-dynamic-committee",
-        "ADR/adr-003-babylon",
-        "ADR/adr-004-solana-integration",
-        "ADR/adr-005-ordinals",
-        "ADR/adr-006-metrics",
-        "ADR/adr-007-e2e-tests",
-        "ADR/adr-008-automatic-signer-list",
-        "ADR/adr-009-blockchain-explorer",
-        "ADR/adr-010-node-ungrades",
-        "ADR/adr-011-superfluid-staking",
-        "ADR/adr-012-ton-integration",
-        "ADR/adr-013-rate-limiting"
+        "resources/bitfrost-sdk",
+        "resources/deployments",
+        "resources/testnet-setup",
+        {
+          label: "Architecture Decision Records",
+          type: "category",
+          items: [
+            "resources/adr/adr-overview",
+            "resources/adr/adr-001-grace-period",
+            "resources/adr/adr-002-dynamic-committee",
+            "resources/adr/adr-003-babylon",
+            "resources/adr/adr-004-solana-integration",
+            "resources/adr/adr-005-ordinals",
+            "resources/adr/adr-006-metrics",
+            "resources/adr/adr-007-e2e-tests",
+            "resources/adr/adr-008-automatic-signer-list",
+            "resources/adr/adr-009-blockchain-explorer",
+            "resources/adr/adr-010-node-ungrades",
+            "resources/adr/adr-011-superfluid-staking",
+            "resources/adr/adr-012-ton-integration",
+            "resources/adr/adr-013-rate-limiting"
+          ],
+        },
+        {
+          label: "Comparisons",
+          type: "category",
+          items: [
+            "resources/comparisons/int3face-thor-zeta",
+            "resources/comparisons/tbtc-ibtc-nbtc",
+            "resources/comparisons/tbtc-ibtc-nbtc-tech"
+          ],
+        },
       ],
     },
   ],

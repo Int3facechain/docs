@@ -8,11 +8,11 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Int3face Docs",
-  tagline: "Int3face",
-  url: "https://int3facechain.github.io",
-  baseUrl: "/docs",
-  onBrokenLinks: "throw",
+  title: "Bitfrost Docs",
+  tagline: "Bitfrost",
+  url: "https://docs.bitfrost.ai",
+  baseUrl: "/",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
@@ -40,13 +40,6 @@ const config = {
           routeBasePath: "/", // Serve the docs at the site's root
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          lastVersion: "current",
-          versions: {
-            current: {
-              label: "1.0",
-              path: "/",
-            },
-          },
         },
       }),
     ],
@@ -72,16 +65,17 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      navbar: {
-        title: "Int3face",
+              navbar: {
+        title: "Bitfrost Docs",
         logo: {
-          alt: "Int3face Logo",
+          alt: "Bitfrost Logo",
           src: "img/logo.jpeg",
+          srcDark: "img/logo.jpeg",
         },
         items: [
           {
             type: "doc",
-            docId: "int3face/overview",
+            docId: "index",
             position: "left",
             label: "Introduction",
           },
@@ -90,11 +84,7 @@ const config = {
             label: "GitHub",
             position: "right",
           },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-          },
+
         ],
       },
       footer: {

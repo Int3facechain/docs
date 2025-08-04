@@ -1,4 +1,10 @@
-# Messages
+---
+id: tokenfactory-messages
+title: Token Factory Messages
+sidebar_label: Messages
+---
+
+# Token Factory Messages
 
 ### CreateDenom
 Creates a denom of `factory/{creator address}/{subdenom}` given the denom creator address and the subdenom. Subdenoms can contain `[a-zA-Z0-9./]`.
